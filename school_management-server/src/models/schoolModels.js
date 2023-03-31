@@ -7,6 +7,11 @@ module.exports = {
         const result = await pool.execute(sql);
         return result[0];
     },
+    createSchool: async (body) => {
+        const sql = `INSERT INTO school ('${body.school_name}','${body.school_email}')`;
+        const result = await pool.execute(sql);
+        return result[0];
+    },
 
     updateSchool: async (school_code, columName, columValue) => {
         const sql = `UPDATE school SET ${columName}='${columValue} WHERE school_code = '${school_code}'`;
