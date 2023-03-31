@@ -22,7 +22,7 @@ class Teacher_addanother extends Component {
             <div className='information__about'>
               <div className='about__text'>
                 <p>About</p>
-                <input type='text'/>
+                <textarea type='text'/>
               </div>
               <div className='about__button'>
                 <button>Edit</button>
