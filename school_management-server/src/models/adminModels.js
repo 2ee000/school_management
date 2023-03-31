@@ -14,11 +14,11 @@ module.exports = {
         return result[0];
     },
 
-    updateAdmin: async (admin_uuid, columName, columValue) => {
-        const sql = `UPDATE admin SET ${columName}='${columValue} WHERE admin_uuid = '${admin_uuid}'`;
-        const result = await pool.execute(sql);
-        return result;
-    },
+    // updateAdmin: async (admin_uuid, columName, columValue) => {
+    //     const sql = `UPDATE admin SET ${columName}='${columValue} WHERE admin_uuid = '${admin_uuid}'`;
+    //     const result = await pool.execute(sql);
+    //     return result;
+    // },
 
     deleteAdmin: async (admin_uuid) => {
         const sql = `DELETE FROM admin WHERE admin_uuid='${admin_uuid}'`;
