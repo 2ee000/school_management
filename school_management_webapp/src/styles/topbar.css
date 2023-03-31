@@ -4,11 +4,12 @@
 
 .topbar {
   width: 100%;
+  position: fixed;
   display: flex;
   align-items: center;
-  padding: 15px 0;
-  padding-left: 240px;
-  background-color: rgb(253, 253, 253);
+  padding: 50px 100px;
+  padding-left: 340px;
+  background-color: #FFFFFF;
 }
 
 .topbar__button {
@@ -49,7 +50,7 @@
 
 .topbar__user {
   width: 100%;
-  padding: 15px 100px;
+  padding: 15px 0;
   display: flex;
   justify-content: end;
   gap: 35px;

@@ -1,3 +1,44 @@
 * {
   box-sizing: border-box;
 }
+
+.teacher__wrapper {
+  width: 100%;
+  padding: 150px 0 0 240px;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  gap: 50px;
+}
+
+.teacher__nodata {
+  width: 1150px;
+  height: 600px;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  gap: 30px;
+  background: #FCFAFA;
+}
+
+.teacher__nodata p:first-child {
+  font-family: 'Kumbh Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 35px;
+  color: #4F4F4F;
+}
+
+.teacher__nodata p:last-child {
+  font-family: 'Kumbh Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  color: #4F4F4F;
+}

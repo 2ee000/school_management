@@ -1,0 +1,54 @@
+.teacher__search {
+  display: flex;
+}
+
+.teacher__search select {
+  font-family: 'Kumbh Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  border: none;
+  padding: 18px;
+  color: #4F4F4F;
+}
+
+.teacher__search option {
+  font-family: 'Kumbh Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+
+  color: #4F4F4F;
+}
+
+.teacher__search-box {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  background: #FCFAFA;
+}
+
+.search__icon {
+  width: 16px;
+  height: 16px;
+  margin-left: 16px;
+  background-image: url(../assets/search_icon.png);
+  background-repeat: no-repeat;
+}
+
+.teacher__search-box input {
+  width: 1000px;
+  font-family: 'Kumbh Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  border: none;
+  border-radius: 8px;
+  padding: 16px;
+  background-color: rgba(0,0,0,0);
+  color: #8A8A8A;
+}

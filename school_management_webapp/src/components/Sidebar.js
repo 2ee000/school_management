@@ -11,7 +11,7 @@ class Sidebar extends Component {
           </div>
           <div className='sidebar__line'></div>
           <div className='sidebar__menus'>
-            <div className='sidebar__menu sidebar__menu--select'>
+            <div className='sidebar__menu'>
               <div className='sidebar__icon--dashboard'></div>
               <p>Dashboard</p>
             </div>

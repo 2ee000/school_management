@@ -1,0 +1,52 @@
+import React, { Component } from 'react';
+import '../styles/teacher_list.css';
+import Sidebar from '../components/Sidebar';
+import Topbar from '../components/Topbar';
+import Search from '../components/Search';
+
+class Teacher_list extends Component {
+  render() {
+    return (
+      <div className='teacher__app'>
+        <Topbar />
+        <Sidebar />
+        <div className='teacher__wrapper'>
+          <Search />
+          <div className='teacher__list'>
+            <div className='list__title'>
+              <p>Name</p>
+              <p>Subject</p>
+              <p>Class</p>
+              <p>Email address</p>
+              <p>Gender</p>
+            </div>
+            <div className='list__contents'>
+              <div className='list__content'>
+                <div className='list__content--name'>
+                  <div className='name__img'></div>
+                  <p>Name</p>
+                </div>
+                <p>Subject</p>
+                <p>Class</p>
+                <p>Email address</p>
+                <p>Gender</p>
+              </div>
+              <div className='list__content'>
+                <div className='list__content--name'>
+                  <div className='name__img'></div>
+                  <p>Name</p>
+                </div>
+                <p>Subject</p>
+                <p>Class</p>
+                <p>Email address</p>
+                <p>Gender</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+}
+
+export default Teacher_list;
