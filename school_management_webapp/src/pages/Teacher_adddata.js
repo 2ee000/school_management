@@ -22,7 +22,11 @@ class Teacher_adddata extends Component {
               <div className='adddata__datas'>
                 <div className='adddata__data'>
                   <p>Full Name</p>
-                  <input className='data__input data__input--big' type='text'/>
+                  <input className='data__input' type='text'/>
+                </div>
+                <div className='adddata__data'>
+                  <p>About</p>
+                  <input className='data__input' type='text'/>
                 </div>
               </div>
               <div className='adddata__datas'>
