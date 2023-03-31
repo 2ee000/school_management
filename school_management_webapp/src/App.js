@@ -1,17 +1,18 @@
 import { createBrowserRouter, Route, RouterProvider } from 'react-router-dom';
 
-import AdminSignup1 from './pages/AdminSignup_page1';
+import Home from './pages/Home';
+import Students_NoData from './pages/Students_NoData';
 
 function App() {
   const router = createBrowserRouter([
     {
     path: "/",
     element: <Home />,
-  },
-    {
-      path: "/adminSignupPage1",
-      element: <AdminSignup1 />,
     },
+    {
+      path: "/studentsNoData",
+      element: <Students_NoData />
+    }
   ])
 
   return (
