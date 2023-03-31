@@ -1,7 +1,7 @@
 import React from 'react';
 import '../styles/login.css';
 
-class Login extends React.Component {
+class AdminLogin extends React.Component {
   render() {
     return (
       <div className='admin-login__app'>
@@ -14,7 +14,6 @@ class Login extends React.Component {
             <option>옵션2</option>
             <option>옵션3</option>
           </select>
-          <input className='admin-login__input' type='text' placeholder='학번/사번'/>
           <input className='admin-login__input' type='password' placeholder='Enter Password'/>
           <button className='admin-login__button'>Next</button>
           <div className='admin-login__go-signup'>
@@ -27,4 +26,4 @@ class Login extends React.Component {
   }
 }
 
-export default Login;
+export default AdminLogin;
