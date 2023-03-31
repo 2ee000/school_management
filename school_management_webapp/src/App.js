@@ -6,6 +6,7 @@ import Teacher_nodata from './pages/Teacher_nodata';
 import Teacher_adddata from './pages/Teacher_adddata';
 import Teacher_list from './pages/Teacher_list';
 import Teacher_information from './pages/Teacher_information';
+import Teacher_addanother from './pages/Teacher_addanother';
 
 function App() {
   const router = createBrowserRouter([
@@ -18,11 +19,11 @@ function App() {
       element: <Dashboard />,
     },
     {
-      path: "/teacherNodata",
+      path: "/teacherNoData",
       element: <Teacher_nodata />,
     },
     {
-      path: "/teacherAdddata",
+      path: "/teacherAddData",
       element: <Teacher_adddata />,
     },
     {
@@ -32,6 +33,10 @@ function App() {
     {
       path: "/teacherInformation",
       element: <Teacher_information />,
+    },
+    {
+      path: "/teacherAddAnother",
+      element: <Teacher_addanother />,
     },
   ])
 

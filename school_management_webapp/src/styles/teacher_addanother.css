@@ -1,0 +1,14 @@
+* {
+  box-sizing: border-box;
+}
+
+.teacher__addanother {
+  width: 1150px;
+  height: 700px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  gap: 100px;
+  background: #FCFAFA;
+}
