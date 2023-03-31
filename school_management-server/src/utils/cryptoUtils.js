@@ -7,7 +7,7 @@ const randomBytesPromise = util.promisify(crypto.randomBytes);
 module.exports = {
 
     createSalt: async () => {
-        const new_salt = randomBytesPromise(64);
+        const new_salt = await randomBytesPromise(64);
         return new_salt.toString("base64");
     },
 
