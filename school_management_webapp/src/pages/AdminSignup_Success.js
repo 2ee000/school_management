@@ -2,8 +2,7 @@ import React from 'react';
 import '../styles/signup.css';
 import '../styles/signup_success.css';
 
-
-class AdminSignup_Password extends React.Component {
+class AdminSignup_Sucess extends React.Component {
   render() {
     return (
       <div className='admin-signup__app'>
@@ -40,4 +39,4 @@ class AdminSignup_Password extends React.Component {
   }
 }
 
-export default AdminSignup_Password;
+export default AdminSignup_Sucess;
