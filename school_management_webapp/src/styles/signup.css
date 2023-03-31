@@ -5,5 +5,138 @@
 .admin-signup__app {
   width: 100%;
   height: 100vh;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  flex-flow: column nowrap;
+  gap: 55px;
   background-color: #FCFAFA;
+}
+
+.admin-signup__title {
+  font-family: 'Kumbh Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 45px;
+  color: #4F4F4F;
+}
+
+.admin-signup__wrapper {
+  width: 450px;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  flex-flow: column nowrap;
+  background: #FFFFFF;
+}
+
+.admin-signup__input {
+  font-family: 'Kumbh Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  width: 248px;
+  height: 42px;
+  border: 0.5px solid rgba(167, 167, 167, 1);
+  border-radius: 4px;
+  padding: 8px 15px;
+  color: #667085;
+}
+
+.admin-signup__input::placeholder {
+  font-family: 'Kumbh Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  color: #A7A7A7;
+}
+
+.admin-signup__button {
+  font-family: 'Kumbh Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+  border: 0.5px solid #A7A7A7;
+  border-radius: 4px;
+  width: 248px;
+  height: 42px;
+  color: #FFFFFF;
+  background: #2D88D4;
+}
+
+.admin-signup__step {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 10px;
+}
+
+.step__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.step__icon--check {
+  width: 24px;
+  height: 24px;
+  background-image: url('../assets/step_icon_check.png');
+}
+
+.step__icon--blue {
+  width: 24px;
+  height: 24px;
+  background-image: url('../assets/step_icon_blue.png');
+}
+
+.step__icon--gray {
+  width: 24px;
+  height: 24px;
+  background-image: url('../assets/step_icon_gray.png');
+}
+
+.step__line {
+  width: 363px;
+  height: 2px;
+  background-image: url('../assets/step_line.png');
+}
+
+.step__text {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  gap: 165px;
+}
+
+.step__text--basic {
+  width: 220px;
+}
+
+.step__text--basic p:first-child {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  color: #040712;
+}
+
+.step__text--basic p:last-child {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: #6C6C6C;
+}
+
+.step__text--blue p:first-child {
+  color: #1777F7;
 }
