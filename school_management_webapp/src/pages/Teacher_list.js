@@ -26,22 +26,41 @@ class Teacher_list extends Component {
                   <div className='name__img'></div>
                   <p>Name</p>
                 </div>
-                <p>Subject</p>
-                <p>Class</p>
-                <p>Email address</p>
-                <p>Gender</p>
+                <div className='list__content--subject'>
+                  <p>Subject</p>
+                </div>
+                <div className='list__content--class'>
+                  <p>Class</p>
+                </div>
+                <div className='list__content--email'>
+                  <p>Email address</p>
+                </div>
+                <div className='list__content--gender'>
+                  <p>Gender</p>
+                </div>
               </div>
+            </div>
+            <div className='list__contents'>
               <div className='list__content'>
                 <div className='list__content--name'>
                   <div className='name__img'></div>
                   <p>Name</p>
                 </div>
-                <p>Subject</p>
-                <p>Class</p>
-                <p>Email address</p>
-                <p>Gender</p>
+                <div className='list__content--subject'>
+                  <p>Subject</p>
+                </div>
+                <div className='list__content--class'>
+                  <p>Class</p>
+                </div>
+                <div className='list__content--email'>
+                  <p>Email address</p>
+                </div>
+                <div className='list__content--gender'>
+                  <p>Gender</p>
+                </div>
               </div>
             </div>
+
           </div>
         </div>
       </div>

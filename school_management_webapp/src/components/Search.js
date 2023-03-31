@@ -13,7 +13,7 @@ class Search extends Component {
         </select>
         <div className='teacher__search-box'>
           <div className='search__icon'></div>
-          <input type='text' placeholder='Search for a student by name or email'/>
+          <input type='text' placeholder='Search for by name or email'/>
         </div>
       </div>
     );

@@ -1,10 +1,10 @@
 .teacher__list {
   width: 1150px;
-  height: 600px;
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
   text-align: center;
+  
   background: #FCFAFA;
 }
 
@@ -12,28 +12,57 @@
   width: 100%;
   display: flex;
   align-items: center;
-  text-align: center;
+  text-align: start;
   justify-content: center;
-  padding: 15px 45px;
-  background-color: bisque;
+  padding: 15px 50px;
+  background-color: #509CDB;
 }
 
 .list__title p {
-  width: 250px;
+  width: 210px;
   font-family: 'Kumbh Sans';
   font-style: normal;
   font-weight: 700;
   font-size: 12px;
   line-height: 15px;
-  color: #424242;
+  color: #FFFFFF;
 }
 
 .list__contents {
   display: flex;
   flex-flow: column nowrap;
+  padding: 15px 50px;
+}
+
+.list__contents:nth-child(odd) {
+  background-color: rgba(235, 246, 255, 0.5);
 }
 
 .list__content {
   display: flex;
-  gap: ;
+}
+
+.list__content--name, .list__content--subject, .list__content--class,
+.list__content--email, .list__content--gender {
+  width: 210px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: start;
+  font-family: 'Kumbh Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 15px;  
+  color: #4F4F4F;
+  gap: 8px;
+}
+
+.name__img {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-image: url(../assets/school_img.png);
+  background-size: contain;
+  background-repeat: no-repeat;
 }

@@ -5,6 +5,7 @@ import Dashboard from './pages/Dashboard';
 import Teacher_nodata from './pages/Teacher_nodata';
 import Teacher_adddata from './pages/Teacher_adddata';
 import Teacher_list from './pages/Teacher_list';
+import Teacher_information from './pages/Teacher_information';
 
 function App() {
   const router = createBrowserRouter([
@@ -27,6 +28,10 @@ function App() {
     {
       path: "/teacherList",
       element: <Teacher_list />,
+    },
+    {
+      path: "/teacherInformation",
+      element: <Teacher_information />,
     },
   ])
 
