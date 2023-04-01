@@ -1,13 +1,13 @@
 import React, { Component } from "react";
 import '../styles/topbar.css';
 
-class Topbar extends Component {
+class Students_Topbar extends Component {
   render() {
     return (
       <div className='topbar'>
         <div className="topbar__button">
           <button className="topbar__button--csv">Export CSV</button>
-          <button className="topbar__button--add">Add Teachers</button>
+          <button className="topbar__button--add">Add Students</button>
         </div>
         <div className="topbar__user">
           <div className="bell"></div>
@@ -18,4 +18,4 @@ class Topbar extends Component {
   }
 }
 
-export default Topbar;
+export default Students_Topbar;

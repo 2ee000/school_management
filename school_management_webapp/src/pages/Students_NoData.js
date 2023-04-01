@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import '../styles/students_nodata.css';
 import Sidebar from '../components/Sidebar';
-import Topbar from '../components/Topbar';
+import Students_Topbar from '../components/Students_Topbar';
 import Search from '../components/Search';
 
 class Students_NoData extends Component {
   render() {
     return (
       <div className='student__app'>
-        <Topbar />
+        <Students_Topbar />
         <Sidebar />
         <div className='student__wrapper'>
           <Search />

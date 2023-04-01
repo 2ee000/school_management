@@ -1,0 +1,255 @@
+* {
+  box-sizing: border-box;
+}
+
+.student__list {
+  display: flex;
+  align-items: start;
+  text-align: center;
+  justify-content: center;
+  gap: 50px;
+}
+
+.student__list--wrapper {
+  width: 1000px;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  background: #FCFAFA;
+}
+
+.student__list--title {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  text-align: start;
+  justify-content: center;
+  padding: 15px 50px;
+  background-color: #509CDB;
+}
+
+.student__list--title p {
+  width: 180px;
+  font-family: 'Kumbh Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 15px;
+  color: #FFFFFF;
+}
+
+.student__list--contents {
+  display: flex;
+  flex-flow: column nowrap;
+  padding: 15px 50px;
+}
+
+.student__list--contents:nth-child(odd) {
+  background-color: rgba(235, 246, 255, 0.5);
+}
+
+.student__list--content {
+  display: flex;
+}
+.student__list--name, .student__list--student-id, .student__list--email,
+.student__list--class, .student__list--gender {
+  width: 180px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: start;
+  font-family: 'Kumbh Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 15px;  
+  color: #4F4F4F;
+  gap: 8px;
+}
+
+.name__img {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-image: url(../assets/school_img.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.student__profile {
+  width: 200px;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+.student__profile--student-id {
+  font-family: 'Kumbh Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  color: #424242;
+}
+
+.student__profile--img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background-image: url(../assets/school_img.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin: 8px;
+}
+
+.student__profile--name {
+  font-family: 'Kumbh Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  color: #1A1A1A;
+}
+
+.student__profile--subject {
+  font-family: 'Kumbh Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  color: #A7A7A7;
+}
+
+.student__profile--buttons {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  gap: 8px;
+  margin: 8px;
+}
+
+.student__profile--school {
+  width: 35px;
+  height: 35px;
+  background-image: url(../assets/information_school_icon.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.student__profile--phone {
+  width: 35px;
+  height: 35px;
+  background-image: url(../assets/information_phone_icon.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.student__profile--email {
+  width: 35px;
+  height: 35px;
+  background-image: url(../assets/information_email_icon.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.student__profile--about {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  text-align: start;
+  justify-self: center;
+}
+
+.student__profile--about p {
+  width: 150px;
+}
+
+.student__profile--etc {
+  width: 150px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: space-between;
+}
+
+.student__profile--etc p {
+  width: 50px;
+}
+
+.student__profile--age,
+.student__profile--gender {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  text-align: center;
+  justify-self: center;
+}
+
+.student__profile--about p:first-child,
+.student__profile--age p:first-child,
+.student__profile--gender p:first-child,
+.student__profile--more-students > p {
+  font-family: 'Kumbh Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 15px;
+  color: #1A1A1A;
+}
+
+.student__profile--about p:last-child,
+.student__profile--age p:last-child,
+.student__profile--gender p:last-child {
+  font-family: 'Kumbh Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  color: #A7A7A7;
+}
+
+.student__profile--about p:last-child {
+  height: 100px;
+}
+
+.student__profile--more-students {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.more-students {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.more-students__img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-image: url(../assets/school_img.png);
+  background-color: black;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.more-students p {
+  font-family: 'Kumbh Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 10px;
+  line-height: 12px;
+  color: #73B0E2;  
+}
