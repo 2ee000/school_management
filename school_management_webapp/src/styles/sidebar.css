@@ -1,4 +1,4 @@
-/*.sidebar {
+.sidebar {
   width: 240px;
   height: 100vh;
   display: flex;
@@ -123,4 +123,4 @@
   height: 14px;
   margin-left: 10px;
   background-image: url(../assets/sidebar_new_icon.png);
-}*/
+}
