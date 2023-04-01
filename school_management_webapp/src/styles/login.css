@@ -47,6 +47,7 @@
 }
 
 select {
+  cursor: pointer;
   font-family: 'Kumbh Sans';
   font-style: normal;
   font-weight: 500;
@@ -92,6 +93,7 @@ option {
 }
 
 .admin-login__button {
+  cursor: pointer;
   font-family: 'Kumbh Sans';
   font-style: normal;
   font-weight: 700;
