@@ -58,6 +58,7 @@
 }
 
 .admin-signup__button {
+  cursor: pointer;
   font-family: 'Kumbh Sans';
   font-style: normal;
   font-weight: 700;
