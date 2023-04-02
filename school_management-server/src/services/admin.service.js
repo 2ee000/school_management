@@ -1,11 +1,12 @@
-const { adminModels } = require('../models');
+// const { adminModels } = require('../models');
+
 const { createUUID } = require('../utils/uuidUtil');
 const { createSalt, createHashedPassword } = require('../utils/cryptoUtils');
+const { adminModels } = require('../models');
 module.exports = {
 
     getAllAdmins: async () => {
         try {
-
             const admins = await adminModels.getAllAdmins();
             return admins;
         } catch (error) {
@@ -20,7 +21,7 @@ module.exports = {
             const { school_code, password } = reqData.body;
             const current_salt = await createSalt();
             const { hashedPassword, salt } = await createHashedPassword(password, current_salt);
-            const admin = await adminModels.createAdmin(admin_uuid, school_code, hashedPassword, salt, reqData);
+            const admin = await adminModels.createAdmin(admin_uuid, school_code, hashedPassword, salt, reqData.body);
             return admin;
         } catch (error) {
             console.log(error);

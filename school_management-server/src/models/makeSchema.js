@@ -20,7 +20,8 @@ module.exports = {
             school_code INT NOT NULL AUTO_INCREMENT COMMENT '학교 분류 코드',
             school_name VARCHAR(30) NOT NULL COMMENT '학교 이름',
             school_email VARCHAR(50) NOT NULL COMMENT '학교 이메일',
-            PRIMARY KEY(school_code)
+            PRIMARY KEY(school_code),
+            UNIQUE KEY school_email (school_email)
         )`;
         const result = await pool.execute(sql);
         return result;
