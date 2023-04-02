@@ -23,7 +23,13 @@ class Students_AddData extends Component {
             <div className='adddata__input'>
               <div className='adddata__datas'>
                 <div className='adddata__data'>
-                  <p>Name</p>
+                  <p>Full Name</p>
+                  <input className='data__input data__input--big' type='text'/>
+                </div>
+              </div>
+              <div className='adddata__datas'>
+                <div className='adddata__data'>
+                  <p>Identification number</p>
                   <input className='data__input' type='text'/>
                 </div>
                 <div className='adddata__data'>
@@ -46,23 +52,32 @@ class Students_AddData extends Component {
               </div>
               <div className='adddata__datas'>
                 <div className='adddata__data'>
-                  <p>Email address</p>
-                  <input className='data__input' type='text'/>
+                  <p>Password</p>
+                  <input className='data__input' type='password'/>
                 </div>
                 <div className='adddata__data'>
                   <p>Phone number</p>
-                  <input className='data__input' type='number'/>                  
+                  <input className='data__input' type='number'/>
                 </div>
               </div>
               <div className='adddata__datas'>
                 <div className='adddata__data'>
-                  <p>Password</p>
+                  <p>Subject</p>
+                  <select className='data__select data__select--big'>
+                    <option>select</option>
+                    <option>option1</option>
+                    <option>option2</option>
+                    <option>option3</option>
+                  </select>
+                </div>
+                <div className='adddata__data'>
+                  <p>Email address</p>
                   <input className='data__input' type='text'/>
                 </div>
               </div>
               <div className='adddata__buttons'>
                 <button><div className='adddata__button--plus'></div>Add another</button>
-                <button>Add Students</button>
+                <button>Add Teacher</button>
               </div>
             </div>
           </div>
