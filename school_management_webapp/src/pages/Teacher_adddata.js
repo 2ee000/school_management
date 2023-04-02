@@ -27,7 +27,7 @@ class Teacher_adddata extends Component {
               </div>
               <div className='adddata__datas'>
                 <div className='adddata__data'>
-                  <p>Email address</p>
+                  <p>Identification number</p>
                   <input className='data__input' type='text'/>
                 </div>
                 <div className='adddata__data'>
@@ -69,7 +69,7 @@ class Teacher_adddata extends Component {
                   </select>
                 </div>
                 <div className='adddata__data'>
-                  <p>Designation</p>
+                  <p>Eamil address</p>
                   <input className='data__input' type='text'/>
                 </div>
               </div>
