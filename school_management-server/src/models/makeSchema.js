@@ -8,6 +8,7 @@ module.exports = {
             admin_name VARCHAR(30) NOT NULL COMMENT '관리자 이름',
             password VARCHAR(128) NOT NULL COMMENT '비밀번호(SHA512)',
             salt VARCHAR(128) NOT NULL COMMENT '솔트값',
+            school_code INT NOT NULL COMMENT '학교 분류 코드',
             PRIMARY KEY(admin_uuid)
         )`;
         const result = await pool.execute(sql);
@@ -37,7 +38,7 @@ module.exports = {
             phone_number VARCHAR(20) NOT NULL COMMENT '핸드폰 번호',
             profile_image VARCHAR(50) COMMENT '프로필 사진',
             student_about VARCHAR(300) COMMENT '학생 소개',
-            school_code INT NOT NULL '학교 분류 코드',
+            school_code INT NOT NULL COMMENT '학교 분류 코드',
             PRIMARY KEY(student_code)
         )`;
         const result = await pool.execute(sql);
@@ -57,8 +58,10 @@ module.exports = {
             phone_number VARCHAR(20) NOT NULL COMMENT '핸드폰 번호',
             profile_image VARCHAR(50) COMMENT '프로필 사진',
             teacher_about VARCHAR(300) COMMENT '선생님 소개',
-            school_code INT NOT NULL '학교 분류 코드',
+            school_code INT NOT NULL COMMENT '학교 분류 코드',
             PRIMARY KEY(teacher_code)
         )`;
+        const result = await pool.execute(sql);
+        return result;
     }
 }
