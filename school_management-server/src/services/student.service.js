@@ -1,4 +1,4 @@
-const studentModels = require('../models/studentModels');
+const { studentModels } = require('../models');
 const { createUUID } = require('../utils/uuidUtil');
 const { createSalt, createHashedPassword } = require('../utils/cryptoUtils');
 module.exports = {

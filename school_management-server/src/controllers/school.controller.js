@@ -1,4 +1,4 @@
-const schoolService = require('../services/school.service');
+const { schoolService } = require('../services');
 
 module.exports = {
 

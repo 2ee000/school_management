@@ -1,4 +1,4 @@
-const studentService = require('../services/student.service');
+const { studentService } = require('../services');
 
 module.exports = {
 

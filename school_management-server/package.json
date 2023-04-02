@@ -17,6 +17,7 @@
   "devDependencies": {
     "crypto": "^1.0.1",
     "dotenv": "^16.0.3",
+    "express-validator": "^6.15.0",
     "nodemon": "^2.0.22",
     "uuid": "^9.0.0"
   }
