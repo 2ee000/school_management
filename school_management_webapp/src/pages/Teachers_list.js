@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import '../styles/teacher_list.css';
+import '../styles/teachers_list.css';
 import Sidebar from '../components/Sidebar';
 import Topbar from '../components/Topbar';
 import Search from '../components/Search';
 
-class Teacher_list extends Component {
+class Teachers_list extends Component {
   render() {
     return (
       <div className='teacher__app'>
@@ -68,4 +68,4 @@ class Teacher_list extends Component {
   }
 }
 
-export default Teacher_list;
+export default Teachers_list;

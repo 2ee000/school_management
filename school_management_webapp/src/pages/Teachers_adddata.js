@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import '../styles/teacher_adddata.css';
+import '../styles/teachers_adddata.css';
 import Sidebar from '../components/Sidebar';
 import Topbar from '../components/Topbar';
 
-class Teacher_adddata extends Component {
+class Teachers_adddata extends Component {
   render() {
     return (
       <div className='teacher__app'>
@@ -69,7 +69,7 @@ class Teacher_adddata extends Component {
                   </select>
                 </div>
                 <div className='adddata__data'>
-                  <p>Eamil address</p>
+                  <p>Email address</p>
                   <input className='data__input' type='text'/>
                 </div>
               </div>
@@ -85,4 +85,4 @@ class Teacher_adddata extends Component {
   }
 }
 
-export default Teacher_adddata;
+export default Teachers_adddata;

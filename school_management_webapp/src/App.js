@@ -2,11 +2,11 @@ import { createBrowserRouter, Route, RouterProvider } from 'react-router-dom';
 
 import Home from './pages/Home';
 import Dashboard from './pages/Dashboard';
-import Teacher_nodata from './pages/Teacher_nodata';
-import Teacher_adddata from './pages/Teacher_adddata';
-import Teacher_list from './pages/Teacher_list';
-import Teacher_information from './pages/Teacher_information';
-import Teacher_addanother from './pages/Teacher_addanother';
+import Teachers_nodata from './pages/Teachers_nodata';
+import Teachers_adddata from './pages/Teachers_adddata';
+import Teachers_list from './pages/Teachers_list';
+import Teachers_information from './pages/Teachers_information';
+import Teachers_addanother from './pages/Teachers_addanother';
 
 function App() {
   const router = createBrowserRouter([
@@ -19,24 +19,24 @@ function App() {
       element: <Dashboard />,
     },
     {
-      path: "/teacherNoData",
-      element: <Teacher_nodata />,
+      path: "/teachersNoData",
+      element: <Teachers_nodata />,
     },
     {
-      path: "/teacherAddData",
-      element: <Teacher_adddata />,
+      path: "/teachersAddData",
+      element: <Teachers_adddata />,
     },
     {
-      path: "/teacherList",
-      element: <Teacher_list />,
+      path: "/teachersList",
+      element: <Teachers_list />,
     },
     {
-      path: "/teacherInformation",
-      element: <Teacher_information />,
+      path: "/teachersInformation",
+      element: <Teachers_information />,
     },
     {
-      path: "/teacherAddAnother",
-      element: <Teacher_addanother />,
+      path: "/teachersAddAnother",
+      element: <Teachers_addanother />,
     },
   ])
 

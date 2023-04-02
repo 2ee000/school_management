@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import '../styles/teacher_nodata.css';
+import '../styles/teachers_nodata.css';
 import Sidebar from '../components/Sidebar';
 import Topbar from '../components/Topbar';
 import Search from '../components/Search';
 
-class Teacher_nodata extends Component {
+class Teachers_nodata extends Component {
   render() {
     return (
       <div className='teacher__app'>
@@ -22,4 +22,4 @@ class Teacher_nodata extends Component {
   }
 }
 
-export default Teacher_nodata;
+export default Teachers_nodata;

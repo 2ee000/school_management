@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import '../styles/teacher_addanother.css';
+import '../styles/teachers_addanother.css';
 import Sidebar from '../components/Sidebar';
 import Topbar from '../components/Topbar';
 import Search from '../components/Search';
 
-class Teacher_addanother extends Component {
+class Teachers_addanother extends Component {
   render() {
     return (
       <div className='teacher__app'>
@@ -36,4 +36,4 @@ class Teacher_addanother extends Component {
   }
 }
 
-export default Teacher_addanother;
+export default Teachers_addanother;
