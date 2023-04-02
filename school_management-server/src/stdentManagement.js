@@ -1,8 +1,8 @@
 /**
  * @api {get} /admin/all [GET] 모든 관리자 찾기
  * @apiName 모든 관리자 찾기
- * @apiVersion 1.0.0
  * @apiGroup Admin
+ * @apiVersion 1.0.0
  *
  * @apiSuccess (Success 200) {Object} response Response of Success
  * 
@@ -15,14 +15,14 @@
  *
  * @apiError (Error 404) AdminNotFound The admins were not found.
  * 
- * @apiErrorExample {json} Error-Response:
+ * @apiErrorExample Error-Response:
  *     HTTP/1.1 404 Not Found
  *     {
  *      "statusCode": 404,
  *      "message": "Admins were not found"
  *     }
  *
- * @apiError BadRequest Client's request was not correct
+ * @apiError (Error 400) BadRequest Client's request was not correct
  * 
  * @apiErrorExample Error-Response:
  *     HTTP/1.1 400 Bad Request
@@ -52,7 +52,7 @@
  *       "message": "Success to signup"
  *     }
  *
- * @apiError BadRequest Client's request was not correct
+ * @apiError (Error 400) BadRequest Client's request was not correct
  * 
  * @apiErrorExample Error-Response:
  *     HTTP/1.1 400 Bad Request
@@ -66,8 +66,8 @@
 /**
  * @api {get} /admin/:school_code/teacher/all [GET] 모든 선생님 찾기
  * @apiName 모든 선생님 찾기
- * @apiVersion 1.0.0
  * @apiGroup Teacher
+ * @apiVersion 1.0.0
  * 
  * @apiSuccess (Success 200) {Object} response Response of Success
  * 
@@ -78,16 +78,16 @@
  *       "message": "Success to find all teachers"
  *     }
  *
- * @apiError TeachersNotFound The teachers were not found.
+ * @apiError (Error 404) TeachersNotFound The teachers were not found.
  * 
- * @apiErrorExample {json} Error-Response:
+ * @apiErrorExample Error-Response:
  *     HTTP/1.1 404 Not Found
  *     {
  *      "statusCode": 404,
  *      "message": "Teachers were not found"
  *     }
  * 
- * @apiError BadRequest Client's request was not correct
+ * @apiError (Error 400) BadRequest Client's request was not correct
  * 
  * @apiErrorExample Error-Response:
  *     HTTP/1.1 400 Bad Request
@@ -122,7 +122,7 @@
  *       "message": "Success to signup"
  *     }
  *
- * @apiError BadRequest Client's request was not correct
+ * @apiError (Error 400) BadRequest Client's request was not correct
  * 
  * @apiErrorExample Error-Response:
  *     HTTP/1.1 400 Bad Request
@@ -136,8 +136,8 @@
 /**
  * @api {get} /admin/:school_code/student/all [GET] 모든 학생 찾기
  * @apiName 모든 학생 찾기
- * @apiVersion 1.0.0
  * @apiGroup Student
+ * @apiVersion 1.0.0
  * 
  * @apiSuccess (Success 200) {Object} response Response of Success
  * 
@@ -148,7 +148,7 @@
  *       "message": "Success to find all teachers"
  *     }
  *
- * @apiError StudentsNotFound The students were not found.
+ * @apiError (Error 404) StudentsNotFound The students were not found.
  * 
  * @apiErrorExample {json} Error-Response:
  *     HTTP/1.1 404 Not Found
@@ -157,7 +157,7 @@
  *      "message": "Students were not found"
  *     }
  *
- * @apiError BadRequest Client's request was not correct
+ * @apiError (Error 400) BadRequest Client's request was not correct
  * 
  * @apiErrorExample Error-Response:
  *     HTTP/1.1 400 Bad Request
@@ -191,7 +191,7 @@
  *       "message": "Success to signup"
  *     }
  *
- * @apiError BadRequest Client's request was not correct
+ * @apiError (Error 400) BadRequest Client's request was not correct
  * 
  * @apiErrorExample Error-Response:
  *     HTTP/1.1 400 Bad Request
