@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import '../styles/dashboard.css';
 import Sidebar from '../components/Sidebar';
+import Topbar from '../components/Topbar';
 
 class Dashboard extends Component {
   render() {
     return (
       <div className='dashboard__app'>
+      <Topbar />
         <Sidebar />
         <div className='dashboard__wrapper'>
           <p className='dashboard__title'>Welcome to your dashboard, Udemy school</p>
