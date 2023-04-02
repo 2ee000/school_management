@@ -44,7 +44,7 @@ class AdminSignup_Password extends React.Component {
     } else if(this.state.checkPassword === '') {
       window.alert('Please enter password confirmation!');
       return;
-    } else if(this.state.adminPassword.length < 8 || this.state.checkPassword < 8) {
+    } else if(this.state.adminPassword.length < 8 || this.state.checkPassword.length < 8) {
       window.alert('Please enter a password of at least 8 characters!');
       return;
     } else if(this.state.adminPassword != this.state.checkPassword) {
