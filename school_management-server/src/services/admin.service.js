@@ -1,10 +1,11 @@
-const adminModels = require('../models/adminModels');
+const { adminModels } = require('../models');
 const { createUUID } = require('../utils/uuidUtil');
 const { createSalt, createHashedPassword } = require('../utils/cryptoUtils');
 module.exports = {
 
     getAllAdmins: async () => {
         try {
+
             const admins = await adminModels.getAllAdmins();
             return admins;
         } catch (error) {
