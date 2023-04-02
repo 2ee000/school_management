@@ -15,7 +15,10 @@
     "mysql2": "^3.2.0"
   },
   "devDependencies": {
+    "crypto": "^1.0.1",
     "dotenv": "^16.0.3",
-    "nodemon": "^2.0.22"
+    "express-validator": "^6.15.0",
+    "nodemon": "^2.0.22",
+    "uuid": "^9.0.0"
   }
 }
