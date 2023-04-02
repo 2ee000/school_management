@@ -9,18 +9,31 @@ class AdminSignup_Information extends React.Component {
     super(props);
     this.state = {
       adminName: '',
-      schoolName: ''
+      schoolName: '',
+      schoolData: []
     };
     /*this.signupAxios = this.signupAxios.bind(this);*/
+    /*this.schoolAxios = this.schoolAxios.bind(this);*/
     this.signupCheck = this.signupCheck.bind(this);
     this.signupError = this.signupError.bind(this);
     this.nextButton = this.nextButton.bind(this);
   }
 
   /*async signupAxios() {
-    await axios.post('서버',{
+    await axios.post('서버', {
       서버에서 admin name: this.state.adminName,
       서버에서 school name: this.state.schoolName,
+    })
+    .then((response) => {
+      console.log(response);
+    }).catch((error) => {
+      console.log(error);
+    })
+  }*/
+
+  /*async schoolAxios() {
+    await axios.get('서버', {
+      서버에서 school data: this.state.schoolData[],
     })
     .then((response) => {
       console.log(response);
@@ -69,9 +82,9 @@ class AdminSignup_Information extends React.Component {
           value={this.state.schoolName}
           onChange={this.signupCheck}>
             <option>Select the name of school</option>
-            <option>옵션1</option>
-            <option>옵션2</option>
-            <option>옵션3</option>
+            <option>option1</option>
+            <option>option2</option>
+            <option>option3</option>
           </select>
           <button className='admin-signup__button'
           onClick={this.nextButton}>Next</button>
