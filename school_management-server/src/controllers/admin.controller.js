@@ -1,6 +1,7 @@
 const adminService = require('../services/admin.service');
 
 module.exports = {
+
     findAll: async (req, res) => {
         try {
             const admins = await adminService.getAllAdmins();
@@ -10,8 +11,8 @@ module.exports = {
         } catch (error) {
             return res.status(500).send({ statusCode: 500, message: "Server Error" });
         }
-    }
-    ,
+    },
+
     registAdmin: async (req, res) => {
         try {
             const admin = await adminService.createAdminUser(req);
@@ -20,6 +21,7 @@ module.exports = {
             return res.status(500).send({ statudCode: 500, message: "Server Error" });
         }
     },
+
     withdraw: async (req, res) => {
         try {
             const admin = await adminService.deleteAdmin(req);

@@ -1,6 +1,7 @@
 const express = require('express');
 const { adminRouter } = require('./routers/adminRouter');
 const { schoolRouter } = require('./routers/schoolRouter');
+const { teacherRouter } = require('./routers/teacherRouter');
 require('dotenv').config();
 
 const app = express();
