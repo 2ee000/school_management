@@ -1,6 +1,6 @@
 module.exports = {
     adminModels: require('./adminModels'),
     schoolModels: require('./schoolModels'),
-    teacherrModels: require('./teacherModels'),
+    teacherModels: require('./teacherModels'),
     studentModels: require('./studentModels'),
 }
