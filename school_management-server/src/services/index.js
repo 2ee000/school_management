@@ -3,4 +3,5 @@ module.exports = {
     schoolService: require('../services/school.service'),
     teacherService: require('../services/teacher.service'),
     studentService: require('../services/student.service'),
+    authService: require('../services/auth.service'),
 }
