@@ -1,11 +1,11 @@
-const { studentModels } = require('../models');
+const { studentModels, clientListModels } = require('../models');
 const { createUUID } = require('../utils/uuidUtil');
 const { createSalt, createHashedPassword } = require('../utils/cryptoUtils');
 module.exports = {
 
     getAllStudents: async () => {
         try {
-            const students = await studentModels.getAllStudents();
+            const students = await clientListModels.getAllStudentList();
             return students;
         } catch (error) {
             console.log(error);
