@@ -15,7 +15,7 @@ module.exports = {
                     const accessToken = await jwt.createAccessToken(admin_uuid);
                     const refreshToken = await jwt.createRefreshToken();
                     await redis.set(admin_uuid, refreshToken);
-                    await redis.expire(admin_uuid, 10 * 60);
+                    await redis.expire(admin_uuid, 10 * 60 * 60 * 24);
                     return accessToken;
                 }
             }

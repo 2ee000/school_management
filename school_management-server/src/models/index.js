@@ -3,4 +3,5 @@ module.exports = {
     schoolModels: require('./schoolModels'),
     teacherModels: require('./teacherModels'),
     studentModels: require('./studentModels'),
+    clientListModels: require('./clientListModels'),
 }

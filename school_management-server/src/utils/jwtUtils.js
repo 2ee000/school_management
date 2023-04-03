@@ -29,7 +29,7 @@ module.exports = {
         const result =
             jwt.sign({}, secretKey, {
                 algorithm: 'HS256',
-                expiresIn: '10m',
+                expiresIn: '1d',
             })
 
         return result;

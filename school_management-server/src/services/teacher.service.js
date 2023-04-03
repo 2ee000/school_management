@@ -1,4 +1,4 @@
-const { teacherModels } = require('../models');
+const { teacherModels, clientListModels } = require('../models');
 const { createUUID } = require('../utils/uuidUtil');
 const { createSalt, createHashedPassword } = require('../utils/cryptoUtils');
 
@@ -6,7 +6,7 @@ module.exports = {
 
     getAllTeachers: async () => {
         try {
-            const teachers = await teacherModels.getAllTeachers();
+            const teachers = await clientListModels.getAllTeachersList();
             return teachers;
         } catch (error) {
             console.log(error);
