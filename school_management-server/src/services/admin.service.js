@@ -29,7 +29,8 @@ module.exports = {
     createAdminUser: async (reqData) => {
         try {
             const admin_uuid = createUUID();
-            const { school_code, password } = reqData.body;
+            const { school_code, admin_pwd } = reqData.body;
+            const password = admin_pwd;
             const current_salt = await createSalt();
             const { hashedPassword, salt } = await createHashedPassword(password, current_salt);
             const admin = await adminModels.createAdmin(admin_uuid, school_code, hashedPassword, salt, reqData.body);
@@ -48,6 +49,21 @@ module.exports = {
         } catch (error) {
             console.log(error);
             throw new Error('Error while deleting an admin');
+        }
+    },
+
+    idcheckAdmin: async (reqData) => {
+        try {
+            const { admin_name } = reqData.body;
+            const columName = "admin_name";
+            const admin = await adminModels.getOneAdmin(columName, admin_name);
+            if (admin.length === 0) {
+                return true;
+            }
+            return false;
+        } catch (error) {
+            console.log(error);
+            throw new Error('Error while checking id');
         }
     }
 }

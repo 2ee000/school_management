@@ -12,18 +12,28 @@ adminRouter.use('/:school_code/teacher', teacherRouter);
 
 adminRouter.get('/all', adminController.findAll);
 
-adminRouter.post('/', [
+adminRouter.post('/check-id', [
     check('admin_name', 'AdminName must not be empty').exists().isString().withMessage('AdminName must be string'),
-    check('password', 'Password must not be empty').exists().isString().withMessage('Password must be string'),
     check('school_code', 'SchoolCode must not be empty').exists().isNumeric().withMessage('SchoolCode must be Number'),
     validationErrorCheck
-], adminController.registAdmin);
+], adminController.checkId);
+
+adminRouter.post('/sign-up', [
+    check('admin_name', 'AdminName must not be empty').exists().isString().withMessage('AdminName must be string'),
+    check('admin_pwd', 'Password must not be empty').exists().isString().withMessage('Password must be string'),
+    check('school_code', 'SchoolCode must not be empty').exists().isNumeric().withMessage('SchoolCode must be Number'),
+    validationErrorCheck
+], adminController.registAdmin)
 
 adminRouter.delete('/', [
     check('admin_uuid', 'AdminUUID must not be empty').exists().isString().withMessage('AdminUUID must be string'),
     validationErrorCheck
 ], adminController.withdraw);
 
-adminRouter.post('/login', [], adminController.login);
+adminRouter.post('/login', [
+    check('admin_name', 'AdminName must not be empty').exists().isString().withMessage('AdminName must be string'),
+    check('admin_pwd', 'AdminPassword must not be empty').exists().isString().withMessage('AdminPassword must be string'),
+    validationErrorCheck
+], adminController.login);
 
 module.exports = { adminRouter };
