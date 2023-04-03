@@ -6,7 +6,8 @@ class Login extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      school: '',
+      schoolName: '',
+      schoolData: ['school1', 'school2', 'school3'],
       studentId: '',
       password: ''
     };
@@ -14,6 +15,7 @@ class Login extends React.Component {
     this.loginCheck = this.loginCheck.bind(this);
     this.loginError = this.loginError.bind(this);
     this.loginButton = this.loginButton.bind(this);
+    this.makeSelectOptions = this.makeSelectOptions.bind(this);
   }
 
   /*async loginAxios() {
@@ -60,6 +62,15 @@ class Login extends React.Component {
     this.loginError();
   }
 
+  makeSelectOptions() {
+    const optionValue = this.state.schoolData.map((name) =>
+    <option
+    key={name} // 추가 안하면 오류
+    name='schoolData'
+    value={name}>{name}</option>)
+    return optionValue
+  }
+
   render() {
     return (
       <div className='admin-login__app'>
@@ -67,13 +78,11 @@ class Login extends React.Component {
         <div className='admin-login__wrapper'>
           <p>It is our great pleasure to have you on board!</p>
           <select
-          name='school'
-          value={this.state.school}
+          name='schoolName'
+          value={this.state.schoolName}
           onChange={this.loginCheck}>
             <option>Select the name of school</option>
-            <option>옵션1</option>
-            <option>옵션2</option>
-            <option>옵션3</option>
+            {this.makeSelectOptions()}
           </select>
           <input
           className='admin-login__input'
