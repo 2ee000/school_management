@@ -24,4 +24,6 @@ adminRouter.delete('/', [
     validationErrorCheck
 ], adminController.withdraw);
 
+adminRouter.post('/login', [], adminController.login);
+
 module.exports = { adminRouter };
