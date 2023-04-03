@@ -2,12 +2,12 @@ const { Router } = require('express');
 const { teacherController } = require('../controllers');
 const { check } = require('express-validator')
 const { validationErrorCheck } = require('../middlewares/validator');
-
+const authMiddleware = require('../middlewares/auth');
 const teacherRouter = Router({ mergeParams: true });
 
-teacherRouter.get('/all', teacherController.findAll);
+teacherRouter.get('/all', authMiddleware.checkToken, teacherController.findAll);
 
-teacherRouter.post('/', [
+teacherRouter.post('/', authMiddleware.checkToken, [
     check('teacher_code', 'TeacherCode must not be empty').exists().isString().withMessage('TeacherCode must be string'),
     check('teacher_name', 'TeacherName must not be empty').exists().isString().withMessage('TeacherName must be string'),
     check('teacher_email', 'TeacherEmail must not be empty').exists().isString().withMessage('TeacherEmail must be string'),
@@ -19,12 +19,12 @@ teacherRouter.post('/', [
     validationErrorCheck
 ], teacherController.registTeacher);
 
-teacherRouter.delete('/', [
+teacherRouter.delete('/', authMiddleware.checkToken, [
     check('teacher_uuid', 'TeacherUUID must not be empty').exists().isString().withMessage('TeacherUUID must be string'),
     validationErrorCheck
 ], teacherController.deleteTeacherData);
 
-teacherRouter.patch('/', [
+teacherRouter.patch('/', authMiddleware.checkToken, [
     check('teacher_uuid', 'TeacherUUID must not be empty').exists().isString().withMessage('TeacherUUID must be string'),
     check('profile_image', 'Profile-Image must not be empty').exists().isString().withMessage('Profile-Image must be string'),
     check('teacher_about', 'TeacherAbout must not be empty').exists().isString().withMessage('TeacherAbout must be string'),

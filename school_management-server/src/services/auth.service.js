@@ -21,7 +21,7 @@ module.exports = {
             }
         } catch (error) {
             console.log(error);
-            throw new Error('login is failed');
+            return
         }
     },
 

@@ -64,6 +64,24 @@
 
 
 /**
+ * @api {post} /admin/ [POST] 관리자 로그인
+ * @api 관리자 로그인
+ * @apiGroup Admin
+ * @apiVersion 1.0.0
+ * 
+ * @apiSuccess (Success 200) {String} Token AccessToken 
+ * 
+ * @apiSuccessExample Success-Response:
+ *     HTTP/1.1 200 OK
+ *     {
+ *       "tokne" : "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1dWlkIjoiZDgwYzE5Yzk3ZTcwNGRlMjhmNDEiLCJpYXQiOjE2ODA1MDA0NzcsImV4cCI6MTY4MDUwMDUzN30.uCp80fhtVliTVVpKU7CKmK-KHhwtvSYTDvQJs2Piev0"
+ *       "statusCode": 200,
+ *       "message": "Success to find all teachers"
+ *     }
+ */
+
+
+/**
  * @api {get} /admin/:school_code/teacher/all [GET] 모든 선생님 찾기
  * @apiName 모든 선생님 찾기
  * @apiGroup Teacher

@@ -44,9 +44,9 @@ module.exports = {
     login: async (req, res) => {
         try {
             const admin = await adminService.getOneAdmin(req);
+            if (admin.length === 0) return res.status(400).send('id or password is not correct!');
             const accessToken = await authService.login(admin, req);
             if (accessToken) return res.status(200).send({ token: accessToken, statusCode: 200, msg: "success login" });
-            return res.status(400).send('id or password is not correct!');
         } catch (error) {
             console.log(error);
             res.status(500).send({ error: error.message });

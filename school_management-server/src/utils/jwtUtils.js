@@ -45,6 +45,7 @@ module.exports = {
             decoded = jwt.verify(token, secretKey);
             return decoded;
         } catch (error) {
+            console.log(error);
             if (error.message === 'jwt expired') {
                 console.log('AccessToken is expired');
                 return TOKEN_EXPIRED;
