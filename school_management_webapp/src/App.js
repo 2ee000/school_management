@@ -1,9 +1,9 @@
 import { createBrowserRouter, Route, RouterProvider } from 'react-router-dom';
-
 import Home from './pages/Home';
-import AdminSignupInformation from './pages/AdminSignup_Information';
-import AdminSignupPassword from './pages/AdminSignup_Password';
-import AdminSignupSuccess from './pages/AdminSignup_Success';
+import AdminSignup from './pages/AdminSignup';
+//import AdminSignupInformation from './pages/AdminSignup_Information';
+//import AdminSignupPassword from './pages/AdminSignup_Password';
+//import AdminSignupSuccess from './pages/AdminSignup_Success';
 
 function App() {
   const router = createBrowserRouter([
@@ -12,6 +12,10 @@ function App() {
     element: <Home />,
     },
     {
+      path: "/adminSignup",
+      element: <AdminSignup />,
+    },
+    /*{
       path: "/adminSignupInformation",
       element: <AdminSignupInformation />,
     },
@@ -22,7 +26,7 @@ function App() {
     {
       path: "/adminSignupSuccess",
       element: <AdminSignupSuccess />,
-    },
+    },*/
   ])
 
   return (

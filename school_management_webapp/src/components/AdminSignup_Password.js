@@ -7,57 +7,6 @@ import '../styles/signup_password.css';
 class AdminSignup_Password extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      adminPassword: '',
-      checkPassword: ''
-    };
-    /*this.passwordAxios = this.passwordAxios.bind(this);*/
-    this.passwordCheck = this.passwordCheck.bind(this);
-    this.passwordError = this.passwordError.bind(this);
-    this.nextButton = this.nextButton.bind(this);
-
-  }
-
-  /*async passwordAxios() {
-    await axios.post('서버',{
-      서버에서 admin password: this.state.adminPassword,
-    })
-    .then((response) => {
-      console.log(response);
-    }).catch((error) => {
-      console.log(error);
-    })
-  }*/
-
-  async passwordCheck(event) {
-    const name = event.target.name;
-    await this.setState({
-      [name]: event.target.value,
-    });
-    console.log(this.state[name]);
-  }
-
-  passwordError() {
-    if(this.state.adminPassword === '') {
-      window.alert('Please enter a password!');
-      return;
-    } else if(this.state.checkPassword === '') {
-      window.alert('Please enter password confirmation!');
-      return;
-    } else if(this.state.adminPassword.length < 8 || this.state.checkPassword.length < 8) {
-      window.alert('Please enter a password of at least 8 characters!');
-      return;
-    } else if(this.state.adminPassword != this.state.checkPassword) {
-      window.alert('Please check your password!');
-      return;
-    } /*else {
-      this.passwordAxios();
-    }*/
-  }
-
-  nextButton() {
-    console.log(this.state);
-    this.passwordError();
   }
 
   render() {
@@ -69,21 +18,21 @@ class AdminSignup_Password extends React.Component {
             <p>Choose a password</p>
             <input className='admin-signup__input'
             type='password' placeholder='Enter the password'
-            name='adminPassword'
-            value={this.state.adminPassword}
-            onChange={this.passwordCheck}/>
+            name='password'
+            value={this.props.password}
+            onChange={this.props.signupCheck}/>
           </div>
           <div className='admin-signup__box'>
             <p>Confirm passwrod</p>
             <input className='admin-signup__input'
             type='password' placeholder='Enter the password'
-            name='checkPassword'
-            value={this.state.checkPassword}
-            onChange={this.passwordCheck}/>
+            name='passwordCheck'
+            value={this.props.passwordCheck}
+            onChange={this.props.signupCheck}/>
             <p className='least-password'>Must be at least 8 characters.</p>
             </div>
           <button className='admin-signup__button'
-          onClick={this.nextButton}>Next</button>
+          onClick={this.props.passwordNextButton}>Next</button>
         </div>
         <div className='admin-signup__step'>
           <div className='step__icon'>
