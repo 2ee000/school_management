@@ -17,6 +17,7 @@ class AdminSignup_Information extends React.Component {
     this.signupCheck = this.signupCheck.bind(this);
     this.signupError = this.signupError.bind(this);
     this.nextButton = this.nextButton.bind(this);
+    this.makeSelectOptions = this.makeSelectOptions.bind(this);
   }
 
   /*async signupAxios() {
@@ -68,6 +69,15 @@ class AdminSignup_Information extends React.Component {
     this.signupError();
   }
 
+  makeSelectOptions() {
+    const optionValue = this.state.schoolData.map((name) =>
+    <option
+    key={name} // 추가 안하면 오류
+    name='schoolData'
+    value={name}>{name}</option>)
+    return optionValue
+  }
+
   render() {
     return (
       <div className='admin-signup__app'>
@@ -83,15 +93,7 @@ class AdminSignup_Information extends React.Component {
           value={this.state.schoolName}
           onChange={this.signupCheck}>
             <option>Select the name of school</option>
-            <option
-            name='schoolName'
-            value={this.state.schoolData[0]}>option1</option>
-            <option
-            name='schoolName'
-            value={this.state.schoolData[1]}>option2</option>
-            <option
-            name='schoolName'
-            value={this.state.schoolData[2]}>option3</option>
+            {this.makeSelectOptions()}
           </select>
           <button className='admin-signup__button'
           onClick={this.nextButton}>Next</button>
