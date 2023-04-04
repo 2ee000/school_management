@@ -30,7 +30,7 @@ class AdminSignup_Information extends React.Component {
           onClick={this.props.informationNextButton}>Next</button>
           <div className='admin-signup__go-login'>
             <p>Already have an account?&nbsp;</p>
-            <a href='/'>Login</a>
+            <a href='/adminLogin'>Login</a>
           </div>
         </div>
         <div className='admin-signup__step'>

@@ -1,14 +1,32 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 import '../styles/dashboard.css';
-import Teachers_sidebar from '../components/Teachers_sidebar';
-import Topbar from '../components/Topbar';
+import Dashboard_Sidebar from '../components/Dashboard_Sidebar';
 
 class Dashboard extends Component {
+  constructor(props) {
+    super(props);
+    this.goAdminLogin = this.goAdminLogin.bind(this);
+  }
+
+  goAdminLogin() {
+    localStorage.clear(); // 토큰 지우기
+    window.location.replace('/adminLogin');
+  }
+
   render() {
     return (
       <div className='dashboard__app'>
-      <Topbar />
-        <Teachers_sidebar />
+      <div className='topbar'>
+        <div className="topbar__button">
+        </div>
+        <div className="topbar__user">
+          <div className="bell"></div>
+          <p className="logout"
+          onClick={this.goAdminLogin}>Log out</p>
+        </div>
+      </div>
+        <Dashboard_Sidebar />
         <div className='dashboard__wrapper'>
           <p className='dashboard__title'>Welcome to your dashboard, Udemy school</p>
           <p className='dashboard__email'>Uyo/school/@teachable.com</p>

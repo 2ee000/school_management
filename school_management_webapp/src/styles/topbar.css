@@ -77,3 +77,7 @@
   line-height: 17px;
   color: #424242;
 }
+
+.logout {
+  cursor: pointer;
+}

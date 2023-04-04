@@ -1,15 +1,39 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 import '../styles/teachers_list.css';
-import Teachers_sidebar from '../components/Teachers_sidebar';
-import Topbar from '../components/Topbar';
+import Teachers_Sidebar from '../components/Teachers_Sidebar';
+import Teachers_Topbar from '../components/Teachers_Topbar';
 import Search from '../components/Search';
 
-class Teachers_list extends Component {
+class Teachers_List extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      teacherData: []
+    }
+    // this.teacherAxios = this.teacherAxios.bind(this);
+  }
+
+  // componentDidMount() {
+  //   this.teacherAxios();
+  // }
+
+  // async teacherAxios() {
+  //   await axios.get('http://15.164.100.35:12044/admin/1/teacher/all')
+  //   .then((response) => {
+  //     this.setState({teacherData: response.data.data});
+  //     console.log(this.state);
+  //     console.log(response);
+  //   }).catch((error) => {
+  //     console.log(error);
+  //   })
+  // }
+
   render() {
     return (
       <div className='teacher__app'>
-        <Topbar />
-        <Teachers_sidebar />
+        <Teachers_Topbar />
+        <Teachers_Sidebar />
         <div className='teacher__wrapper'>
           <Search />
           <div className='teacher__list'>
@@ -68,4 +92,4 @@ class Teachers_list extends Component {
   }
 }
 
-export default Teachers_list;
+export default Teachers_List;

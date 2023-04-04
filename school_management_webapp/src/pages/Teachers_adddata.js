@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import '../styles/teachers_adddata.css';
-import Teachers_sidebar from '../components/Teachers_sidebar';
-import Topbar from '../components/Topbar';
-//import Teachers_addanother from '../components/Teachers_addanother';
+import Teachers_Sidebar from '../components/Teachers_Sidebar';
+import Teachers_Topbar from '../components/Teachers_Topbar';
 
-class Teachers_adddata extends Component {
+class Teachers_AddData extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -96,8 +95,8 @@ class Teachers_adddata extends Component {
   render() {
     return (
       <div className='teacher__app'>
-        <Topbar />
-        <Teachers_sidebar />
+        <Teachers_Topbar />
+        <Teachers_Sidebar />
         <div className='teacher__wrapper'>
           <div className='teacher__adddata'>
             <div className='adddata__text'>
@@ -202,4 +201,4 @@ class Teachers_adddata extends Component {
   }
 }
 
-export default Teachers_adddata;
+export default Teachers_AddData;

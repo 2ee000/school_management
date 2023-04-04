@@ -21,7 +21,7 @@ class AdminLogin extends React.Component {
   componentDidMount() {
     this.schoolAxios();
   }
-
+  
   async loginAxios() {
     await axios.post("http://15.164.100.35:12044/admin/login", {
       admin_name: this.state.adminName,
@@ -31,7 +31,8 @@ class AdminLogin extends React.Component {
       console.log(response);
       localStorage.clear(); // 모든 데이터 삭제
       localStorage.setItem('token', response.data.token); // token데이터 저장
-      console.log('token',localStorage.token);
+      console.log(localStorage.token);
+      window.location.replace('/dashboard');
     }).catch((error) => {
       console.log(error);
       if(error.response.status === 400) {
@@ -108,7 +109,7 @@ class AdminLogin extends React.Component {
           onClick={this.loginButton}>Login</button>
           <div className='admin-login__go-signup'>
             <p>If you don't have an account?&nbsp;</p>
-            <a href='/'>Sign up</a>
+            <a href='/adminSignup'>Sign up</a>
           </div>
         </div>
       </div>

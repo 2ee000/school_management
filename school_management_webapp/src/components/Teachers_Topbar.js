@@ -1,10 +1,15 @@
 import React, { Component } from "react";
 import '../styles/topbar.css';
 
-class Students_Topbar extends Component {
+class Teachers_Topbar extends Component {
   constructor(props) {
     super(props);
+    this.goAddTeacher = this.goAddTeacher.bind(this);
     this.goAdminLogin = this.goAdminLogin.bind(this);
+  }
+
+  goAddTeacher() {
+    window.location.replace('/teachersAddData');
   }
 
   goAdminLogin() {
@@ -17,7 +22,8 @@ class Students_Topbar extends Component {
       <div className='topbar'>
         <div className="topbar__button">
           <button className="topbar__button--csv">Export CSV</button>
-          <button className="topbar__button--add">Add Students</button>
+          <button className="topbar__button--add"
+          onClick={this.goAddTeacher}>Add Teachers</button>
         </div>
         <div className="topbar__user">
           <div className="bell"></div>
@@ -29,4 +35,4 @@ class Students_Topbar extends Component {
   }
 }
 
-export default Students_Topbar;
+export default Teachers_Topbar;

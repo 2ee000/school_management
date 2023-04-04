@@ -3,13 +3,23 @@ import '../styles/signup.css';
 import '../styles/signup_success.css';
 
 class AdminSignup_Sucess extends React.Component {
+  constructor(props){
+    super(props);
+    this.goLoginPage = this.goLoginPage.bind(this);
+  }
+
+  goLoginPage() {
+    window.location.replace('/adminLogin');
+  }
+
   render() {
     return (
       <div className='admin-signup__app'>
         <p className='admin-signup__title'>Udemy school, Sign up success</p>
         <div className='admin-signup__wrapper success__wrapper'>
           <p>Sign up success go to main page?</p>
-          <button className='admin-signup__button' type='submit'>go to main page</button>
+          <button className='admin-signup__button' type='submit'
+          onClick={this.goLoginPage}>go to main page</button>
         </div>
         <div className='admin-signup__step'>
           <div className='step__icon'>
