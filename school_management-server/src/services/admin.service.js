@@ -15,6 +15,17 @@ module.exports = {
         }
     },
 
+    getOneAdmin: async (reqData) => {
+        try {
+            const columName = "admin_name";
+            const columValue = reqData.body.admin_name;
+            const admin = await adminModels.getOneAdmin(columName, columValue);
+            return admin;
+        } catch (error) {
+            throw new Error('Error while finding an admin');
+        }
+    },
+
     createAdminUser: async (reqData) => {
         try {
             const admin_uuid = createUUID();

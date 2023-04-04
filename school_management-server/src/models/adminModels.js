@@ -8,6 +8,15 @@ module.exports = {
         return result[0];
     },
 
+    getOneAdmin: async (columName, columValue) => {
+        const sql = `SELECT * FROM admin WHERE ${columName} = '${columValue}'`;
+        // const sql = 'SELECT * FROM admin WHERE ' + columName + '=?'
+        // const param = [columValue];
+        const result = await pool.execute(sql)
+        // const result = await pool.execute(sql, param);
+        return result[0];
+    },
+
     createAdmin: async (admin_uuid, school_code, hashedPassword, salt, body) => {
         const sql = `INSERT INTO admin VALUES('${admin_uuid}','${body.admin_name}','${hashedPassword}','${salt}','${school_code}')`;
         const result = await pool.execute(sql);

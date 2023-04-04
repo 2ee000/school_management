@@ -24,4 +24,10 @@ adminRouter.delete('/', [
     validationErrorCheck
 ], adminController.withdraw);
 
+adminRouter.post('/login', [
+    check('admin_name', 'AdminName must not be empty').exists().isString().withMessage('AdminName must be string'),
+    check('admin_pwd', 'AdminPassword must not be empty').exists().isString().withMessage('AdminPassword must be string'),
+    validationErrorCheck
+], adminController.login);
+
 module.exports = { adminRouter };
