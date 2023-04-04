@@ -77,7 +77,7 @@ class Login extends React.Component {
         <p className='admin-login__title'>Welcome, Login into you account</p>
         <div className='admin-login__wrapper'>
           <p>It is our great pleasure to have you on board!</p>
-          <select
+          <select className='admin-login__select'
           name='schoolName'
           value={this.state.schoolName}
           onChange={this.loginCheck}>

@@ -12,7 +12,7 @@
   color: #667085;
 }
 
-select {
+.admin-signup__select {
   cursor: pointer;
   font-family: 'Kumbh Sans';
   font-style: normal;
@@ -27,7 +27,7 @@ select {
   color: #667085;
 }
 
-option {
+admin-signup__select option {
   font-family: 'Kumbh Sans';
   font-style: normal;
   font-weight: 500;

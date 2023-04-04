@@ -19,7 +19,8 @@ class AdminSignup_Information extends React.Component {
           name='adminName'
           value={this.props.adminName}
           onChange={this.props.signupCheck}/>
-          <select name='schoolName'
+          <select className='admin-signup__select'
+          name='schoolName'
           value={this.props.schoolName}
           onChange={this.props.signupCheck}>
             <option>Select the name of school</option>
