@@ -1,6 +1,9 @@
 import { createBrowserRouter, Route, RouterProvider } from 'react-router-dom';
 
 import Home from './pages/Home';
+import Students_NoData from './pages/Students_NoData';
+import Students_AddData from './pages/Students_AddData';
+import Students_List from './pages/Students_List';
 import Dashboard from './pages/Dashboard';
 import Teachers_nodata from './pages/Teachers_nodata';
 import Teachers_adddata from './pages/Teachers_adddata';
@@ -15,6 +18,17 @@ function App() {
     element: <Home />,
     },
     {
+      path: "/studentsNoData",
+      element: <Students_NoData />
+    },
+    {
+      path: "/studentsAddData",
+      element: <Students_AddData />
+    },
+    {
+      path: "/studentsList",
+      element: <Students_List />
+    },
       path: "/dashboard",
       element: <Dashboard />,
     },
