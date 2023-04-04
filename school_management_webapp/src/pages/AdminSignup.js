@@ -48,6 +48,9 @@ class AdminSignup extends React.Component {
       }
     }).catch((error) => {
       console.log(error);
+      if(error.response.status === 400) {
+        window.alert('Duplicate admins exist!');
+      }
     })
   }
 
