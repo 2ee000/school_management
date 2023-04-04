@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import '../styles/students_adddata.css';
-import Sidebar from '../components/Sidebar';
+import Student_Sidebar from '../components/Student_Sidebar';
 import Students_Topbar from '../components/Students_Topbar';
 import Search from '../components/Search';
 
@@ -15,7 +15,6 @@ class Students_AddData extends Component {
       gender: '',
       password: '',
       phoneNumber: '',
-      subject: '',
       emailAddress: '',
       about: ''
     };
@@ -26,21 +25,26 @@ class Students_AddData extends Component {
   }
 
   async signupAxios() {
-    await axios.post('http://15.164.100.35:12044/admin/:school_code/student/', {
-      student_name : this.state.fullName,
+    await axios.post('http://15.164.100.35:12044/admin/1/student/', {
       student_code : this.state.identificationNumber,
+      student_name : this.state.fullName,
+      student_email : this.state.emailAddress,
+      password : this.state.password,
       class : this.state.class,
       gender : this.state.gender,
-      password : this.state.password,
       phone_number : this.state.phoneNumber,
-      subject : this.state.subject,
-      student_email : this.state.emailAddress,
       // : this.state.about
     })
     .then((response) => {
       console.log(response);
+      if(response.data.statusCode === 201) {
+        window.location.replace('/studentsList')
+      }
     }) .catch((error) => {
       console.log(error);
+      if(error.response.data.statusCode === 400) {
+        window.alert('Duplicate information exist!');
+      }
     })
   }
 
@@ -71,12 +75,11 @@ class Students_AddData extends Component {
     } else if(this.state.phoneNumber === '') {
       window.alert('Please enter your phone number!');
       return;
-    } else if(this.state.subject === '' || this.state.subject == 'select') {
-      window.alert('Please select your subject!');
-      return;
     } else if(this.state.emailAddress === '') {
       window.alert('Please enter your email address!');
       return;
+    } else {
+      this.signupAxios();
     }
   }
 
@@ -89,7 +92,7 @@ class Students_AddData extends Component {
     return (
       <div className='student__app'>
         <Students_Topbar />
-        <Sidebar />
+        <Student_Sidebar />
         <div className='student__wrapper'>
           <Search />
           <div className='student__adddata'>
@@ -126,9 +129,9 @@ class Students_AddData extends Component {
                   value={this.state.class}
                   onChange={this.studentCheck}>
                     <option>select</option>
-                    <option>option1</option>
-                    <option>option2</option>
-                    <option>option3</option>
+                    <option value={1} label='1 Grade'/>
+                    <option value={2} label='2 Grade'/>
+                    <option value={3} label='3 Grade'/>
                   </select>
                 </div>
                 <div className='adddata__data'>
@@ -138,8 +141,8 @@ class Students_AddData extends Component {
                   value={this.state.gender}
                   onChange={this.studentCheck}>
                     <option>select</option>
-                    <option>Male</option>
-                    <option>Female</option>
+                    <option value={0} label='Male'/>
+                    <option value={1} label='Female'/>
                   </select>
                 </div>
               </div>
@@ -161,18 +164,6 @@ class Students_AddData extends Component {
               </div>
               <div className='adddata__datas'>
                 <div className='adddata__data'>
-                  <p>Subject</p>
-                  <select className='data__select data__select--big'
-                  name='subject'
-                  value={this.state.subject}
-                  onChange={this.studentCheck}>
-                    <option>select</option>
-                    <option>option1</option>
-                    <option>option2</option>
-                    <option>option3</option>
-                  </select>
-                </div>
-                <div className='adddata__data'>
                   <p>Email address</p>
                   <input className='data__input' type='text'
                   name='emailAddress'
@@ -183,7 +174,7 @@ class Students_AddData extends Component {
               <div className='adddata__buttons'>
                 <button><div className='adddata__button--plus'></div>Add another</button>
                 <button
-                onClick={this.addStudentButton}>Add Teacher</button>
+                onClick={this.addStudentButton}>Add Student</button>
               </div>
             </div>
           </div>

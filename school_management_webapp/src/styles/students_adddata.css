@@ -125,6 +125,7 @@
 }
 
 .adddata__buttons button {
+  cursor: pointer;
   width: 150px;
   padding: 16px;
   font-family: 'Kumbh Sans';
