@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import '../styles/sidebar.css';
 
-class Sidebar extends Component {
+class Teachers_idebar extends Component {
   render() {
     return (
       <div className='sidebar'>
@@ -15,7 +15,7 @@ class Sidebar extends Component {
               <div className='sidebar__icon--dashboard'></div>
               <p>Dashboard</p>
             </div>
-            <div className='sidebar__menu'>
+            <div className='sidebar__menu sidebar__menu--select'>
               <div className='sidebar__icon--teachers'></div>
               <p>Teachers</p>
             </div>
@@ -48,4 +48,4 @@ class Sidebar extends Component {
   }
 }
 
-export default Sidebar;
+export default Teachers_idebar;

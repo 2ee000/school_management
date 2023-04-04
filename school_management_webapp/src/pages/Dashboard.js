@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import '../styles/dashboard.css';
-import Sidebar from '../components/Sidebar';
+import Teachers_sidebar from '../components/Teachers_sidebar';
 import Topbar from '../components/Topbar';
 
 class Dashboard extends Component {
@@ -8,7 +8,7 @@ class Dashboard extends Component {
     return (
       <div className='dashboard__app'>
       <Topbar />
-        <Sidebar />
+        <Teachers_sidebar />
         <div className='dashboard__wrapper'>
           <p className='dashboard__title'>Welcome to your dashboard, Udemy school</p>
           <p className='dashboard__email'>Uyo/school/@teachable.com</p>

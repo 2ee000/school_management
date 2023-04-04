@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 import '../styles/teachers_adddata.css';
-import Sidebar from '../components/Sidebar';
+import Teachers_sidebar from '../components/Teachers_sidebar';
 import Topbar from '../components/Topbar';
+//import Teachers_addanother from '../components/Teachers_addanother';
 
 class Teachers_adddata extends Component {
   constructor(props) {
@@ -17,9 +19,29 @@ class Teachers_adddata extends Component {
       emailAddress: '',
       about: ''
     };
+    this.signupAxios = this.signupAxios.bind(this);
     this.teacherCheck = this.teacherCheck.bind(this);
     this.teacherError = this.teacherError.bind(this);
     this.addTeacherButton = this.addTeacherButton.bind(this);
+  }
+  
+  async signupAxios() {
+    await axios.post('http://15.164.100.35:12044/admin/sign-up', {
+      teacher_name : this.state.fullName,
+      teacher_code : this.state.identificationNumber,
+      class : this.state.class,
+      gender : this.state.gender,
+      password : this.state.password,
+      phone_number : this.state.phoneNumber,
+      subject : this.state.subject,
+      teacher_email : this.state.emailAddress,
+      // : this.state.about
+    })
+    .then((response) => {
+      console.log(response);
+    }) .catch((error) => {
+      console.log(error);
+    })
   }
 
   async teacherCheck(event) {
@@ -67,7 +89,7 @@ class Teachers_adddata extends Component {
     return (
       <div className='teacher__app'>
         <Topbar />
-        <Sidebar />
+        <Teachers_sidebar />
         <div className='teacher__wrapper'>
           <div className='teacher__adddata'>
             <div className='adddata__text'>

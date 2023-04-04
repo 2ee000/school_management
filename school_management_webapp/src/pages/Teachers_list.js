@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import '../styles/teachers_list.css';
-import Sidebar from '../components/Sidebar';
+import Teachers_sidebar from '../components/Teachers_sidebar';
 import Topbar from '../components/Topbar';
 import Search from '../components/Search';
 
@@ -9,7 +9,7 @@ class Teachers_list extends Component {
     return (
       <div className='teacher__app'>
         <Topbar />
-        <Sidebar />
+        <Teachers_sidebar />
         <div className='teacher__wrapper'>
           <Search />
           <div className='teacher__list'>
