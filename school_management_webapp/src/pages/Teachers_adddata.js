@@ -26,21 +26,26 @@ class Teachers_adddata extends Component {
   }
   
   async signupAxios() {
-    await axios.post('http://15.164.100.35:12044/admin/sign-up', {
+    await axios.post('http://15.164.100.35:12044/admin/1/teacher/', {
       teacher_name : this.state.fullName,
       teacher_code : this.state.identificationNumber,
+      teacher_email : this.state.emailAddress,
+      password : this.state.password,
       class : this.state.class,
       gender : this.state.gender,
-      password : this.state.password,
-      phone_number : this.state.phoneNumber,
       subject : this.state.subject,
-      teacher_email : this.state.emailAddress,
-      // : this.state.about
+      phone_number : this.state.phoneNumber,
     })
     .then((response) => {
       console.log(response);
+      if(response.data.statusCode === 201) {
+        window.location.replace('/dashboard')
+      }
     }) .catch((error) => {
       console.log(error);
+      if(error.response.data.statusCode === 400) {
+        window.alert('Duplicate information exist!');
+      }
     })
   }
 
@@ -77,6 +82,9 @@ class Teachers_adddata extends Component {
     } else if(this.state.emailAddress === '') {
       window.alert('Please enter your email address!');
       return;
+    } else {
+      console.log('teacherAxios!');
+      this.signupAxios();
     }
   }
 
@@ -125,9 +133,9 @@ class Teachers_adddata extends Component {
                   value={this.state.class}
                   onChange={this.teacherCheck}>
                     <option>select</option>
-                    <option>option1</option>
-                    <option>option2</option>
-                    <option>option3</option>
+                    <option value={1} label='1 Grade'/>
+                    <option value={2} label='2 Grade'/>
+                    <option value={3} label='3 Grade'/>
                   </select>
                 </div>
                 <div className='adddata__data'>
@@ -137,8 +145,8 @@ class Teachers_adddata extends Component {
                   value={this.state.gender}
                   onChange={this.teacherCheck}>
                     <option>select</option>
-                    <option>Male</option>
-                    <option>Female</option>
+                    <option value={0} label='Male'/>
+                    <option value={1} label='Female'/>
                   </select>
                 </div>
               </div>
@@ -166,9 +174,11 @@ class Teachers_adddata extends Component {
                   value={this.state.subject}
                   onChange={this.teacherCheck}>
                     <option>select</option>
-                    <option>option1</option>
-                    <option>option2</option>
-                    <option>option3</option>
+                    <option value={0} label='Korean Language'/>
+                    <option value={1} label='Mathematics'/>
+                    <option value={2} label='Social'/>
+                    <option value={3} label='Science'/>
+                    <option value={4} label='English'/>
                   </select>
                 </div>
                 <div className='adddata__data'>
