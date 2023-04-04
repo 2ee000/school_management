@@ -1,0 +1,127 @@
+.sidebar {
+  width: 240px;
+  height: 100vh;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  text-align: center;
+  position: fixed;
+  left: 0;
+  background: #152259;
+}
+
+.school {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  padding: 27px 0;
+  gap: 12px;
+}
+
+.school__img {
+  width: 65px;
+  height: 65px;
+  background-image: url('../assets/school_img.png');
+}
+
+.school p {
+  height: 40px;
+  font-family: 'Kumbh Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 17px;
+  padding: 10px;
+  color: #FFFFFF;
+}
+
+.sidebar__line {
+  width: 100%;
+  margin-bottom: 16px;
+  border: 0.5px solid #BDBDBD;
+}
+
+.sidebar__menus {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.sidebar__menu {
+  cursor: pointer;
+  width: 192px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  padding-left: 11px;
+  gap: 16px;
+}
+
+.sidebar__menu--select {
+  border-radius: 4px;
+  background: #509CDB;
+}
+
+.sidebar__menu p {
+  font-family: 'Kumbh Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 17px;
+  color: #FFFFFF;
+}
+
+.sidebar__icon--dashboard {
+  width: 16px;
+  height: 16px;
+  background-image: url(../assets/sidebar_dashboard_icon.png);
+}
+
+.sidebar__icon--teachers {
+  width: 16px;
+  height: 16px;
+  background-image: url(../assets/sidebar_teachers_icon.png);  
+}
+
+.sidebar__icon--students {
+  width: 16px;
+  height: 16px;
+  background-image: url(../assets/sidebar_students_icon.png);  
+}
+
+.sidebar__icon--billing {
+  width: 16px;
+  height: 16px;
+  background-image: url(../assets/sidebar_billing_icon.png);  
+}
+
+.sidebar__icon--settings {
+  width: 16px;
+  height: 16px;
+  background-image: url(../assets/sidebar_settings_icon.png);  
+}
+
+.sidebar__icon--exams {
+  width: 16px;
+  height: 16px;
+  background-image: url(../assets/sidebar_exams_icon.png);  
+}
+
+.sidebar__icon--features {
+  width: 16px;
+  height: 16px;
+  background-image: url(../assets/sidebar_features_icon.png);
+}
+
+.sidebar__icon--new {
+  width: 41px;
+  height: 14px;
+  margin-left: 10px;
+  background-image: url(../assets/sidebar_new_icon.png);
+}

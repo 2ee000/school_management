@@ -1,0 +1,205 @@
+* {
+  box-sizing: border-box;
+}
+
+.teacher__information {
+  width: 1150px;
+  height: 700px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  gap: 100px;
+  background: #FCFAFA;
+}
+
+.information__profile {
+  width: 400px;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  gap: 50px;
+}
+
+.profile__img {
+  width: 300px;
+  height: 300px;
+  background-image: url(../assets/school_img.png);
+  background-color: black;
+  background-size: contain;
+  background-repeat: no-repeat;
+  border-radius: 50%;
+}
+
+.profile__text {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+.profile__text p:first-child {
+  font-family: 'Kumbh Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  text-align: center;
+  color: #1A1A1A;
+}
+
+.profile__text p:last-child {
+  font-family: 'Kumbh Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+  text-align: center;
+  color: #A7A7A7;
+}
+
+.profile__button {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  gap: 25px;
+}
+
+.profile__button button {
+  width: 60px;
+  height: 60px;
+  border: none;
+  border-radius: 8px;
+}
+
+.profile__button--school {
+  background-image: url(../assets/information_school_icon.png);
+}
+
+.profile__button--phone {
+  background-image: url(../assets/information_phone_icon.png);
+}
+
+.profile__button--email {
+  background-image: url(../assets/information_email_icon.png);
+}
+
+.information__about {
+  width: 400px;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  gap: 50px;
+}
+
+.about__text {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: start;
+  text-align: start;
+  justify-content: start;
+  gap: 16px;
+}
+
+.about__text p:first-child {
+  font-family: 'Kumbh Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+  color: #1A1A1A;
+}
+
+.about__text p:last-child {
+  width: 300px;
+  font-family: 'Kumbh Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 21px;
+  color: #A7A7A7;
+}
+
+.about__etc {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-self: center;
+  gap: 150px;
+}
+
+.about__age, .about__gender {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 8px;
+}
+
+.about__age p:first-child, .about__gender p:first-child {
+  font-family: 'Kumbh Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 15px;
+  color: #1A1A1A;
+}
+
+.about__age p:last-child, .about__gender p:last-child {
+  font-family: 'Kumbh Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  color: #A7A7A7;
+}
+
+.about__more-teachers {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.about__more-teachers > p {
+  font-family: 'Kumbh Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 15px;
+  color: #1A1A1A;
+}
+
+.more-teachers {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.more-teachers__img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-image: url(../assets/school_img.png);
+  background-color: black;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.more-teachers p {
+  font-family: 'Kumbh Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 10px;
+  line-height: 12px;
+  color: #73B0E2;
+}

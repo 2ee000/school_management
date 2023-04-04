@@ -1,0 +1,53 @@
+* {
+  box-sizing: border-box;
+}
+
+.teacher__addanother {
+  width: 1150px;
+  height: 700px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  gap: 100px;
+  background: #FCFAFA;
+}
+
+.information__about textarea {
+  width: 300px;
+  height: 250px;
+  border: 0.5px solid #A7A7A7;
+  border-radius: 4px;
+  padding: 16px;
+  resize: none;
+  font-family: 'Kumbh Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+}
+
+.about__button {
+  width: 300px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: space-between;
+}
+
+.about__button button{
+  width: 125px;
+  padding: 16px;
+  font-family: 'Kumbh Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 17px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  border: none;
+  border-radius: 4px;
+  color: #4F4F4F;
+}
