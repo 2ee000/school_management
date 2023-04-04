@@ -1,8 +1,8 @@
-.teacher__search {
+.search {
   display: flex;
 }
 
-.teacher__search select {
+.search select {
   font-family: 'Kumbh Sans';
   font-style: normal;
   font-weight: 500;
@@ -13,7 +13,7 @@
   color: #4F4F4F;
 }
 
-.teacher__search option {
+.search option {
   font-family: 'Kumbh Sans';
   font-style: normal;
   font-weight: 500;
@@ -23,7 +23,7 @@
   color: #4F4F4F;
 }
 
-.teacher__search-box {
+.search-box {
   display: flex;
   align-items: center;
   text-align: center;
@@ -39,7 +39,7 @@
   background-repeat: no-repeat;
 }
 
-.teacher__search-box input {
+.search-box input {
   width: 1000px;
   font-family: 'Kumbh Sans';
   font-style: normal;

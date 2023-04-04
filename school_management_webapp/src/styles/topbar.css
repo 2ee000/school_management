@@ -18,6 +18,10 @@
   gap: 16px;
 }
 
+.topbar__button button {
+  cursor: pointer;
+}
+
 .topbar__button--csv {
   width: 120px;
   height: 45px;

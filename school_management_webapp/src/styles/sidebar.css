@@ -53,6 +53,7 @@
 }
 
 .sidebar__menu {
+  cursor: pointer;
   width: 192px;
   height: 40px;
   display: flex;
