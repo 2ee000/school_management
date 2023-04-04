@@ -1,0 +1,131 @@
+* {
+  box-sizing: border-box;
+}
+
+.admin-login__app {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  flex-flow: column nowrap;
+  gap: 55px;
+  background-color: #FCFAFA;
+}
+
+.admin-login__title {
+  font-family: 'Kumbh Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 45px;
+  color: #4F4F4F;
+}
+
+.admin-login__wrapper {
+  width: 450px;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  flex-flow: column nowrap;
+  gap: 14px;
+  margin-bottom: 129px;
+  background: #FFFFFF;
+}
+
+.admin-login__wrapper > p {
+  width: 238px;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 25px;
+  color: #667085;
+}
+
+select {
+  cursor: pointer;
+  font-family: 'Kumbh Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  width: 248px;
+  height: 42px;
+  border: 0.5px solid rgba(167, 167, 167, 1);
+  border-radius: 4px;
+  padding: 8px 15px;
+  color: #667085;
+}
+
+option {
+  font-family: 'Kumbh Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+}
+
+.admin-login__input {
+  font-family: 'Kumbh Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  width: 248px;
+  height: 42px;
+  border: 0.5px solid rgba(167, 167, 167, 1);
+  border-radius: 4px;
+  padding: 8px 15px;
+  color: #667085;
+}
+
+.admin-login__input::placeholder {
+  font-family: 'Kumbh Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  color: #A7A7A7;
+}
+
+.admin-login__button {
+  cursor: pointer;
+  font-family: 'Kumbh Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+  border: 0.5px solid #A7A7A7;
+  border-radius: 4px;
+  width: 248px;
+  height: 42px;
+  color: #FFFFFF;
+  background: #2D88D4;
+}
+
+.admin-login__go-signup {
+  display: flex;
+}
+
+.admin-login__go-signup p {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 24px;
+  color: #667085;
+}
+
+.admin-login__go-signup a {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 24px;
+  text-decoration: none;
+  color: #2D88D4
+}
