@@ -2,6 +2,10 @@
   box-sizing: border-box;
 }
 
+.hidden-input {
+  display: none;
+}
+
 .teacher__addanother {
   width: 1150px;
   height: 700px;
@@ -36,6 +40,7 @@
 }
 
 .about__button button{
+  cursor: pointer;
   width: 125px;
   padding: 16px;
   font-family: 'Kumbh Sans';

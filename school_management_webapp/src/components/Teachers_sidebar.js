@@ -19,17 +19,16 @@ class Teachers_Sidebar extends Component {
   }
 
   async checkToken() {
-    await axios.get('http://15.164.100.35:12044/admin/1/teacher/all', {
+    await axios.get('http://15.164.100.35:12044/admin/1/teacher/all' , {
       headers: {
         "Content-Type": "application/json",
         Authorization: `Bearer ${localStorage.getItem('token')}`
       }
     }).then((response) => {
       console.log(response);
-    }).catch((error) => {
+    }) .catch((error) => {
       console.log(error);
     })
-    console.log(localStorage.getItem('token'));
   }
 
   goDashboard() {

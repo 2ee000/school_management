@@ -5,9 +5,6 @@ import '../styles/sidebar.css';
 class Dashboard_Sidebar extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      teacherData: []
-    };
     this.checkToken = this.checkToken.bind(this);
     this.goDashboard = this.goDashboard.bind(this);
     this.goTeachers = this.goTeachers.bind(this);
@@ -39,11 +36,7 @@ class Dashboard_Sidebar extends Component {
   }
 
   goTeachers() {
-    if(this.state.teacherData === null) {
-      window.location.replace('/teachersNoData');
-    } else {
-      window.location.replace('/teachersList');
-    }
+    window.location.replace('/teachersList');
   }
 
   goStudents() {

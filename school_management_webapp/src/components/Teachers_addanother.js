@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import '../styles/teachers_addanother.css';
-import Teachers_sidebar from './Teachers_sidebar';
-import Topbar from './Topbar';
+import Teachers_Sidebar from './Teachers_Sidebar';
+import Teachers_Topbar from './Teachers_Topbar';
 
 class Teachers_addanother extends Component {
   render() {
     return (
       <div className='teacher__app'>
-        <Topbar />
-        <Teachers_sidebar />
+        <Teachers_Topbar />
+        <Teachers_Sidebar />
         <div className='teacher__wrapper'>
           <div className='teacher__addanother'>
             <div className='information__profile'>

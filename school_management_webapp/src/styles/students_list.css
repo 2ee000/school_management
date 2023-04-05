@@ -1,7 +1,16 @@
 * {
   box-sizing: border-box;
 }
-
+.student__wrapper {
+  width: 100%;
+  padding: 150px 0 0 240px;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  gap: 50px;
+}
 .student__list {
   display: flex;
   align-items: start;
@@ -73,7 +82,6 @@
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  background-image: url(../assets/school_img.png);
   background-size: contain;
   background-repeat: no-repeat;
 }
@@ -116,7 +124,7 @@
   color: #1A1A1A;
 }
 
-.student__profile--subject {
+.student__profile--email {
   font-family: 'Kumbh Sans';
   font-style: normal;
   font-weight: 500;
@@ -150,7 +158,7 @@
   background-repeat: no-repeat;
 }
 
-.student__profile--email {
+.student__profile--address {
   width: 35px;
   height: 35px;
   background-image: url(../assets/information_email_icon.png);
@@ -182,7 +190,7 @@
   width: 50px;
 }
 
-.student__profile--age,
+.student__profile--class,
 .student__profile--gender {
   display: flex;
   flex-flow: column nowrap;
@@ -192,7 +200,7 @@
 }
 
 .student__profile--about p:first-child,
-.student__profile--age p:first-child,
+.student__profile--class p:first-child,
 .student__profile--gender p:first-child,
 .student__profile--more-students > p {
   font-family: 'Kumbh Sans';
@@ -204,7 +212,7 @@
 }
 
 .student__profile--about p:last-child,
-.student__profile--age p:last-child,
+.student__profile--class p:last-child,
 .student__profile--gender p:last-child {
   font-family: 'Kumbh Sans';
   font-style: normal;
