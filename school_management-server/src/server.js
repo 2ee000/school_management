@@ -1,7 +1,8 @@
 const express = require('express');
 const { adminRouter, schoolRouter } = require('./routers')
-
 const makeSchema = require('./models/makeSchema');
+const { logHandler, errorHandler } = require('./middlewares/errorHandler');
+
 require('dotenv').config();
 
 const app = express();
@@ -21,6 +22,9 @@ app.get('/', (req, res) => {
 //     await makeSchema.createTeacherSchema();
 //     return res.status(201).send({ statusCode: 201, message: "Success to create schema" });
 // })
+app.use(logHandler);
+app.use(errorHandler);
+
 app.listen(PORT, () => {
     console.log(`The server is listeing at ${PORT}`);
 })

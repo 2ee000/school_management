@@ -5,6 +5,6 @@ module.exports = {
         ACCESSTOKEN_INVALID: -4,
         REFRESHTOKEN_INVALID: -5,
         ACCESSTOKEN_EXPIRED: -6,
-        REFRESHTOKEN_EXPIRED: -7
+        REFRESHTOKEN_EXPIRED: -7,
     }
 }
