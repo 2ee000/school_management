@@ -9,9 +9,9 @@ module.exports = {
     },
 
     getOneAdmin: async (columName, columValue) => {
-        const sql = `SELECT * FROM admin WHERE ${columName} = '${columValue}'`;
-        // const sql = 'SELECT * FROM admin WHERE ' + columName + '=?'
-        // const param = [columValue];
+        // const sql = `SELECT * FROM admin WHERE ${columName} = '${columValue}'`;
+        const sql = 'SELECT * FROM admin WHERE ' + columName + '=?'
+        const param = [columValue];
         const result = await pool.execute(sql)
         // const result = await pool.execute(sql, param);
         return result[0];

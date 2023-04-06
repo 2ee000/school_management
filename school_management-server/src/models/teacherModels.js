@@ -8,8 +8,15 @@ module.exports = {
         return result[0];
     },
 
-    createTeacher: async (school_code, teacher_uuid, hashedPassword, salt, body) => {
-        const sql = `INSERT INTO teacher VALUES('${body.teacher_code}','${teacher_uuid}','${body.teacher_name}','${body.teacher_email}','${hashedPassword}','${salt}','${body.class}','${body.gender}','${body.subject}','${body.phone_number}','NULL','NULL','${school_code}')`;
+    getOneTeacher: async (teacher_code, teacher_email) => {
+        const sql = `SELECT * FROM teacher WHERE teacher_code='${teacher_code}' OR teacher_email ='${teacher_email}'`;
+        const result = await pool.execute(sql);
+        if (result[0][0]) return false;
+        else return true;
+    },
+
+    createTeacher: async (school_code, teacher_uuid, hashedPassword, salt, reqData) => {
+        const sql = `INSERT INTO teacher VALUES('${reqData.body.teacher_code}','${teacher_uuid}','${reqData.body.teacher_name}','${reqData.body.teacher_email}','${hashedPassword}','${salt}',${reqData.body.class},${reqData.body.gender},${reqData.body.subject},'${reqData.body.phone_number}',${school_code},'${reqData.file.path}','${reqData.body.teacher_about}')`;
         const result = await pool.execute(sql);
         return result;
     },

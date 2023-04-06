@@ -6,14 +6,12 @@ const { ACCESSTOKEN_INVALID, REFRESHTOKEN_INVALID, ACCESSTOKEN_EXPIRED, REFRESHT
 
 const authMiddleware = {
     checkToken: async (req, res, next) => {
+
         try {
             const { accessToken, result } = await authService.verifyToken(req);
-            console.log(result);
+
             if (result === ACCESSTOKEN_INVALID) {
                 return res.status(403).send({ err: "accessToken is invalid", statusCode: 403, msg: 'Forbidden' });
-            }
-            if (result === ACCESSTOKEN_NOTFOUND) {
-
             }
             else if (result === REFRESHTOKEN_INVALID) {
                 return res.status(401).send({ err: "refreshToken is invalid", statusCode: 401, msg: '재로그인 해주세요' });
@@ -32,8 +30,9 @@ const authMiddleware = {
 
             return next();
         } catch (error) {
+
             error.status = 500;
-            error.msg = 'hi'
+            error.msg = 'token is not found';
             next(error);
         }
     }

@@ -8,8 +8,15 @@ module.exports = {
         return result[0];
     },
 
-    createStudent: async (school_code, student_uuid, hashedPassword, salt, body) => {
-        const sql = `INSERT INTO student VALUES('${body.student_code}','${student_uuid}','${body.student_name}','${body.student_email}','${hashedPassword}','${salt}','${body.class}','${body.gender}','${body.phone_number}','NULL','NULL','${school_code}')`;
+    getOneStudent: async (student_code, student_email) => {
+        const sql = `SELECT * FROM student WHERE student_code='${student_code}' OR student_email ='${student_email}'`;
+        const result = await pool.execute(sql);
+        if (result[0][0]) return false;
+        else return true;
+    },
+
+    createStudent: async (school_code, student_uuid, hashedPassword, salt, reqData) => {
+        const sql = `INSERT INTO student VALUES('${reqData.body.student_code}','${student_uuid}','${reqData.body.student_name}','${reqData.body.student_email}','${hashedPassword}','${salt}',${reqData.body.class},${reqData.body.gender},'${reqData.body.phone_number}',${school_code},'${reqData.file.path}','${reqData.body.student_about}')`;
         const result = await pool.execute(sql);
         return result;
     },

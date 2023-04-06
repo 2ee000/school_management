@@ -1,13 +1,14 @@
-const { Router } = require('express');
+const express = require('express');
 const { teacherController } = require('../controllers');
 const { check } = require('express-validator')
 const { validationErrorCheck } = require('../middlewares/validator');
 const authMiddleware = require('../middlewares/auth');
-const teacherRouter = Router({ mergeParams: true });
+const teacherRouter = express.Router({ mergeParams: true });
+const upload = require('../middlewares/multer');
 
 teacherRouter.get('/all', authMiddleware.checkToken, teacherController.findAll);
 
-teacherRouter.post('/', authMiddleware.checkToken, [
+teacherRouter.post('/', upload.single('image'), authMiddleware.checkToken, [
     check('teacher_code', 'TeacherCode must not be empty').exists().isString().withMessage('TeacherCode must be string'),
     check('teacher_name', 'TeacherName must not be empty').exists().isString().withMessage('TeacherName must be string'),
     check('teacher_email', 'TeacherEmail must not be empty').exists().isString().withMessage('TeacherEmail must be string'),

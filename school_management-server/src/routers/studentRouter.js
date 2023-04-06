@@ -1,14 +1,15 @@
-const { Router } = require('express');
+const express = require('express');
 const { studentController } = require('../controllers');
 const { check } = require('express-validator')
 const authMiddleware = require('../middlewares/auth');
 const { validationErrorCheck } = require('../middlewares/validator');
+const upload = require('../middlewares/multer');
 
-const studentRouter = Router({ mergeParams: true });
+const studentRouter = express.Router({ mergeParams: true });
 
 studentRouter.get('/all', authMiddleware.checkToken, studentController.findAll);
 
-studentRouter.post('/', authMiddleware.checkToken, [
+studentRouter.post('/', upload.single('image'), authMiddleware.checkToken, [
     check('student_code', 'StudentCode must not be empty').exists().isString().withMessage('StudentCode must be string'),
     check('student_name', 'StudentName must not be empty').exists().isString().withMessage('StudentName must be string'),
     check('student_email', 'StudentEmail must not be empty').exists().isString().withMessage('StudentEmail must be string'),

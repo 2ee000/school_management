@@ -1,7 +1,7 @@
 const { verifyPassword } = require('../utils/cryptoUtils');
 const jwt = require('../utils/jwtUtils');
 const redis = require('../utils/redisUtils');
-const { TOKEN_INVALID, TOKEN_EXPIRED, ACCESSTOKEN_INVALID, REFRESHTOKEN_INVALID, ACCESSTOKEN_EXPIRED, REFRESHTOKEN_EXPIRED, ACCESSTOKEN_NOTFOUND } = require('../config/tokenStatusconfig');
+const { TOKEN_INVALID, TOKEN_EXPIRED, ACCESSTOKEN_INVALID, REFRESHTOKEN_INVALID, ACCESSTOKEN_EXPIRED, REFRESHTOKEN_EXPIRED } = require('../config/tokenStatusconfig');
 
 module.exports = {
 
@@ -18,10 +18,11 @@ module.exports = {
                     await redis.expire(admin_uuid, 10 * 60 * 60 * 24);
                     return accessToken;
                 }
+                else return false;
             }
         } catch (error) {
             console.log(error);
-            return
+            throw new Error("Login failed");
         }
     },
 
@@ -50,7 +51,7 @@ module.exports = {
             }
         } catch (error) {
             console.log(error);
-            throw new Error('AccessToken is not found');
+            throw new Error('Token was not found');
         }
     }
 }

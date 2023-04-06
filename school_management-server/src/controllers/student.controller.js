@@ -1,11 +1,12 @@
 const { studentService } = require('../services');
+const Api404Error = require('../errors/api404Error');
 
 module.exports = {
 
     findAll: async (req, res) => {
         try {
-            const students = await studentService.getAllStudents();
-            if (students.length === 0) return res.status(404).send({ statudCode: 404, message: "students were not found" });
+            const { students, objectCheck } = await studentService.getAllStudents();
+            if (objectCheck) return res.status(404).send({ statudCode: 404, message: "students were not found" });
             return res.status(200).send({ data: students, statusCode: 200, message: "Success to find all students" });
         } catch (error) {
             return res.status(500).send({ statusCode: 500, message: "Server Error" });
@@ -14,10 +15,12 @@ module.exports = {
 
     registStudent: async (req, res) => {
         try {
+            const data = await studentService.getOneStudent(req);
+            if (!data) return res.status(400).send({ statusCode: 400, message: "StudentCode or Email is duplicate" });
             const student = await studentService.insertStudent(req);
-            return res.status(201).send({ statudCode: 201, message: "Success to regist" });
+            return res.status(201).send({ statusCode: 201, message: "Success to regist" });
         } catch (error) {
-            return res.status(500).send({ statudCode: 500, message: "Server Error" });
+            return res.status(500).send({ statusCode: 500, message: "Server Error" });
         }
     },
 

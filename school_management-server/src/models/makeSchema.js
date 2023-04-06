@@ -30,6 +30,7 @@ module.exports = {
     createStudentSchema: async () => {
         const sql = `CREATE table student (
             student_code VARCHAR(30) NOT NULL COMMENT '학생 학번',
+            student_uuid VARCHAR(36) NOT NULL COMMENT '학생 UUID',
             student_name VARCHAR(30) NOT NULL COMMENT '학생 이름',
             student_email VARCHAR(50) NOT NULL COMMENT '학생 이메일',
             password VARCHAR(128) NOT NULL COMMENT '비밀번호(SHA512)',
@@ -49,6 +50,7 @@ module.exports = {
     createTeacherSchema: async () => {
         const sql = `CREATE table teacher (
             teacher_code VARCHAR(30) NOT NULL COMMENT '선생님 학번',
+            teacher_uuid VARCHAR(36) NOT NULL COMMENT '선생님 UUID',
             teacher_name VARCHAR(30) NOT NULL COMMENT '선생님 이름',
             teacher_email VARCHAR(50) NOT NULL COMMENT '선생님 이메일',
             password VARCHAR(128) NOT NULL COMMENT '비밀번호(SHA512)',
