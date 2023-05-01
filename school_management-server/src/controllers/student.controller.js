@@ -1,5 +1,4 @@
 const { studentService } = require('../services');
-const Api404Error = require('../errors/api404Error');
 
 module.exports = {
 

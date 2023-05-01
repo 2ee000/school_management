@@ -1,6 +1,5 @@
 const redis = require('redis');
-const { REDIS_PASSWORD, REDIS_HOST, REDIS_PORT } = process.env;
-
+const { REDIS_PASSWORD, REDIS_HOST, REDIS_PORT } = require('../config');
 const redisClient = redis.createClient({
     socket: {
         host: REDIS_HOST,

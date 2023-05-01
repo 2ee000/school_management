@@ -12,6 +12,7 @@ module.exports = {
      */
     createSalt: async () => {
         const new_salt = await randomBytesPromise(64);
+        console.log(new_salt);
         return new_salt.toString("base64");
     },
 

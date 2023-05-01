@@ -1,68 +1,66 @@
 const { adminService, authService } = require('../services');
-
+const HttpStatusCode = require('../config/httpStatusCode');
+const { Api404Error } = require('../errors/Api404Error');
+const { Api400Error } = require('../errors/Api400Error');
 module.exports = {
 
-    findAll: async (req, res) => {
+    findAll: async (req, res, next) => {
         try {
             const admins = await adminService.getAllAdmins();
-            if (admins.length === 0) return res.status(404).send({ statudCode: 404, message: "admins were not found" });
-            return res.status(200).send({ data: admins, statusCode: 200, message: "Success to find all admins" });
-
+            if (admins.length === 0) throw new Api404Error("User were not found");
+            return res.status(HttpStatusCode.OK).send({ data: admins, statusCode: HttpStatusCode.OK, message: "Success to find all admins" });
         } catch (error) {
-            return res.status(500).send({ statusCode: 500, message: "Server Error" });
+            next(error);
         }
     },
 
-    findOne: async (req, res) => {
+    findOne: async (req, res, next) => {
         try {
             const admin = await adminService.getOneAdmin(req);
-            if (admin.length === 0) return res.status(404).send({ statudCode: 404, message: 'admin was not found' });
-            return res.status(200).send({ data: admin, statudCode: 200, message: "Success to find an admins" });
+            if (admin.length === 0) throw new Api404Error("User were not found");
+            return res.status(HttpStatusCode.OK).send({ data: admin, statudCode: HttpStatusCode.OK, message: "Success to find an admins" });
         } catch (error) {
-            return res.status(500).send({ statusCode: 500, message: "Server Error" });
+            next(error);
         }
     },
 
-    registAdmin: async (req, res) => {
+    registAdmin: async (req, res, next) => {
         try {
             const admin = await adminService.createAdminUser(req);
-            return res.status(201).send({ statudCode: 201, message: "Success to signup" });
+            return res.status(HttpStatusCode.CREATED).send({ statudCode: HttpStatusCode.CREATED, message: "Success to signup" });
         } catch (error) {
-            return res.status(500).send({ statudCode: 500, message: "Server Error" });
+            next(error);
         }
     },
 
-    withdraw: async (req, res) => {
+    withdraw: async (req, res, next) => {
         try {
             const admin = await adminService.deleteAdmin(req);
-            return res.status(201).send({ statusCode: 201, message: "Success to withdraw" });
+            return res.status(HttpStatusCode.CREATED).send({ statusCode: HttpStatusCode.CREATED, message: "Success to withdraw" });
         } catch (error) {
-            return res.status(500).send({ statusCode: 500, message: "Server Error" });
+            next(error);
         }
     },
 
-    login: async (req, res) => {
+    login: async (req, res, next) => {
         try {
             const admin = await adminService.getOneAdmin(req);
-            if (admin.length === 0) return res.status(400).send({ statusCode: 400, message: 'id or password is not correct!' });
+            if (admin.length === 0) throw new Api400Error("id or pwd was not correct");
             const accessToken = await authService.login(admin, req);
-            if (accessToken) return res.status(200).send({ token: accessToken, school_code: admin[0].school_code, statusCode: 200, msg: "Success login" });
-            else return res.status(400).send({ statusCode: 400, message: "id or password is not correct!" });
-
+            if (accessToken) return res.status(HttpStatusCode.OK).send({ token: accessToken, school_code: admin[0].school_code, statusCode: HttpStatusCode.OK, msg: "Success login" });
+            else throw new Api400Error("id or pwd was not correct");
         } catch (error) {
-            console.log(error);
-            return res.status(500).send({ statudCode: 500, message: "Server Error" });
+            next(error);
         }
     },
 
-    checkId: async (req, res) => {
+    checkId: async (req, res, next) => {
         try {
             const admin = await adminService.idcheckAdmin(req);
-            if (admin) return res.status(200).send({ statusCode: 200, message: "This ID is available" });
-            return res.status(400).send({ statusCode: 400, message: "Duplicate ID" });
+            if (admin) return res.status(HttpStatusCode.OK).send({ statusCode: HttpStatusCode.OK, message: "This ID is available" });
+            return res.status(HttpStatusCode.BAD_REQUEST).send({ statusCode: HttpStatusCode.BAD_REQUEST, message: "Duplicate ID" });
         } catch (error) {
-            console.log(error);
-            return res.status(500).send({ statudCode: 500, message: "Server Error" });
+            next(error);
         }
     }
 }

@@ -1,8 +1,7 @@
-// const { adminModels } = require('../models');
-
 const { createUUID } = require('../utils/uuidUtil');
 const { createSalt, createHashedPassword } = require('../utils/cryptoUtils');
 const { adminModels } = require('../models');
+
 module.exports = {
 
     getAllAdmins: async () => {

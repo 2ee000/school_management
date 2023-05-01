@@ -1,4 +1,4 @@
-const { secretKey } = require('../config/jwtconfig');
+const { secretKey } = require('../config');
 const jwt = require('../utils/jwtUtils');
 const redis = require('../utils/redisUtils');
 const { authService } = require('../services');
@@ -22,9 +22,6 @@ const authMiddleware = {
             }
             else if (result === REFRESHTOKEN_EXPIRED) {
                 return res.status(401).send({ statusCode: 401, msg: '재로그인 해주세요' });
-            }
-            else if (result === true) {
-                return next();
             }
             res.header('AccessToken', "Bearer " + accessToken);
 

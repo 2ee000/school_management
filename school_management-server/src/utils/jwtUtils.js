@@ -1,7 +1,7 @@
 const randToken = require('rand-token');
 const jwt = require('jsonwebtoken');
 const redis = require('../utils/redisUtils');
-const { options, secretKey } = require('../config/jwtconfig');
+const { options, secretKey } = require('../config');
 const { TOKEN_INVALID, TOKEN_EXPIRED } = require('../config/tokenStatusconfig');
 
 module.exports = {
