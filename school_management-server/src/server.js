@@ -1,7 +1,6 @@
 const express = require('express');
-
+const logger = require('../src/loaders/logger');
 const { PORT } = require('./config');
-console.log(PORT);
 const app = express();
 
 async function startServer() {
@@ -10,7 +9,7 @@ async function startServer() {
         res.render('index.html');
     });
     app.listen(PORT, () => {
-        console.log(`The server is listeing at ${PORT}`);
+        logger.info(`The server is listeing at ${PORT}`);
     });
 };
 
