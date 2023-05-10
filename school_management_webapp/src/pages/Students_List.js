@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import '../styles/students_list.css';
+import '../styles/students_nodata.css';
 import Student_Sidebar from '../components/Student_Sidebar';
 import Students_Topbar from '../components/Students_Topbar';
 import Search from '../components/Search';
@@ -28,7 +29,8 @@ class Students_List extends Component {
   }
 
   async checkToken() {
-    await axios.get('http://15.164.100.35:12044/admin/1/student/all' , {
+    const school_code = localStorage.getItem('school_code');
+    await axios.get(`http://15.164.100.35:12044/admin/${school_code}/student/all` , {
       headers: {
         "Content-Type": "application/json",
         Authorization: `Bearer ${localStorage.getItem('token')}`
@@ -74,7 +76,7 @@ class Students_List extends Component {
       return(
         <div className='student__profile'>
           <p className='student__profile--student-id'>Student ID</p>
-          <div className='student__profile--img'></div>
+          <div className='student__profile--img' ></div>
           <p className='student__profile--name'>Student Name</p>
           <p className='student__profile--email'>Eamil Address</p>
           <div className='student__profile--buttons'>
@@ -109,7 +111,7 @@ class Students_List extends Component {
       return(
         <div className='student__profile'>
           <p className='student__profile--student-id'>{this.state.studentData[this.state.selectedStudent].student_code}</p>
-          <div className='student__profile--img'></div>
+          <img className='student__profile--img' src={'http://15.164.100.35:12044/'+this.state.studentData[this.state.selectedStudent].profile_image}/>
           <p className='student__profile--name'>{this.state.studentData[this.state.selectedStudent].student_name}</p>
           <p className='student__profile--email'>{this.state.studentData[this.state.selectedStudent].student_email}</p>
           <div className='student__profile--buttons'>
@@ -119,7 +121,7 @@ class Students_List extends Component {
           </div>
           <div className='student__profile--about'>
             <p>About</p>
-            <p>about student</p>
+            <p>{this.state.studentData[this.state.selectedStudent].student_about}</p>
           </div>
           <div className='student__profile--etc'>
             <div className='student__profile--class'>
@@ -165,10 +167,11 @@ class Students_List extends Component {
   makeStudentList() {
     const studentList = this.state.studentData.map((name) => 
     <div className='student__list--contents'
+    key={name.student_name}
     onClick={() => this.selectStudentProfile(name)}>
       <div className='student__list--content'>
         <div className='student__list--name'>
-          <div className='name__img'></div>
+          <img className='name__img' src={'http://15.164.100.35:12044/'+name.profile_image}/>
           <p>{name.student_name}</p>
         </div>
         <div className='student__list--student-id'>

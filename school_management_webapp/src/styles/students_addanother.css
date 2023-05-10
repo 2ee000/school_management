@@ -6,7 +6,7 @@
   display: none;
 }
 
-.teacher__addanother {
+.student__addanother {
   width: 1150px;
   height: 700px;
   display: flex;
@@ -22,7 +22,7 @@
   height: 250px;
   border: 0.5px solid #A7A7A7;
   border-radius: 4px;
-  padding: 15px;
+  padding: 16px;
   resize: none;
   font-family: 'Kumbh Sans';
   font-style: normal;

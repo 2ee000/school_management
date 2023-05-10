@@ -2,6 +2,30 @@
   box-sizing: border-box;
 }
 
+.close-button {
+  width: 500px;
+  align-items: center;
+  text-align: start;
+  justify-content: center;
+}
+
+.close-button img {
+  width: 30px;
+  height: 30px;
+}
+
+.edit-button {
+  width: 500px;
+  align-items: center;
+  text-align: end;
+  justify-content: center;
+}
+
+.edit-button img {
+  width: 30px;
+  height: 30px;
+}
+
 .teacher__information {
   width: 1150px;
   height: 700px;
@@ -95,19 +119,21 @@
   align-items: center;
   text-align: center;
   justify-content: center;
-  gap: 50px;
+  gap: 30px;
 }
 
 .about__text {
+  height: 300px;
   display: flex;
   flex-flow: column nowrap;
   align-items: start;
   text-align: start;
-  justify-content: start;
+  justify-content: end;
   gap: 16px;
 }
 
 .about__text p:first-child {
+  padding-left: 15px;
   font-family: 'Kumbh Sans';
   font-style: normal;
   font-weight: 600;
@@ -118,12 +144,15 @@
 
 .about__text p:last-child {
   width: 300px;
+  height: 200px;
+  padding: 15px;
   font-family: 'Kumbh Sans';
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
   line-height: 21px;
   color: #A7A7A7;
+  background-color: #FFFFFF;
 }
 
 .about__etc {
@@ -134,13 +163,13 @@
   gap: 150px;
 }
 
-.about__age, .about__gender {
+.about__class, .about__gender {
   display: flex;
   flex-flow: column nowrap;
   gap: 8px;
 }
 
-.about__age p:first-child, .about__gender p:first-child {
+.about__class p:first-child, .about__gender p:first-child {
   font-family: 'Kumbh Sans';
   font-style: normal;
   font-weight: 600;
@@ -149,7 +178,7 @@
   color: #1A1A1A;
 }
 
-.about__age p:last-child, .about__gender p:last-child {
+.about__class p:last-child, .about__gender p:last-child {
   font-family: 'Kumbh Sans';
   font-style: normal;
   font-weight: 500;

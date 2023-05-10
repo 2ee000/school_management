@@ -11,16 +11,15 @@ class AdminLogin extends React.Component {
       password: ''
     };
     this.loginAxios = this.loginAxios.bind(this);
-    this.schoolAxios = this.schoolAxios.bind(this);
+    //this.schoolAxios = this.schoolAxios.bind(this);
     this.loginCheck = this.loginCheck.bind(this);
     this.loginError = this.loginError.bind(this);
     this.loginButton = this.loginButton.bind(this);
-    //this.makeSelectOptions = this.makeSelectOptions.bind(this);
   }
 
-  componentDidMount() {
-    this.schoolAxios();
-  }
+  // componentDidMount() {
+  //   this.schoolAxios();
+  // }
   
   async loginAxios() {
     await axios.post("http://15.164.100.35:12044/admin/login", {
@@ -28,10 +27,9 @@ class AdminLogin extends React.Component {
       admin_pwd: this.state.password,
     })
     .then((response) => {
-      console.log(response);
       localStorage.clear(); // 모든 데이터 삭제
-      localStorage.setItem('token', response.data.token); // token데이터 저장
-      console.log(localStorage.token);
+      localStorage.setItem('token', response.data.token); // token 저장
+      localStorage.setItem('school_code', response.data.school_code); // school code 저장
       window.location.replace('/dashboard');
     }).catch((error) => {
       console.log(error);
@@ -41,15 +39,15 @@ class AdminLogin extends React.Component {
     })
   }
 
-  async schoolAxios() {
-    await axios.get('http://15.164.100.35:12044/school/all')
-    .then((response) => {
-      this.setState({schoolData: response.data.data});
-      console.log(response);
-    }).catch((error) => {
-      console.log(error);
-    })
-  }
+  // async schoolAxios() {
+  //   await axios.get('http://15.164.100.35:12044/school/all')
+  //   .then((response) => {
+  //     this.setState({schoolData: response.data.data});
+  //     console.log(response);
+  //   }).catch((error) => {
+  //     console.log(error);
+  //   })
+  // }
 
   async loginCheck(event) { // 입력한 정보 체크
     const name = event.target.name;
@@ -72,19 +70,8 @@ class AdminLogin extends React.Component {
   }
 
   loginButton() {
-    //console.log(this.state);
     this.loginError();
   }
-
-  /*makeSelectOptions() {
-    const optionValue = this.state.schoolData.map((name) =>
-    <option
-    key={name.school_code} // 추가 안하면 오류
-    name='schoolData'
-    value={name.school_code}
-    label={name.school_name}/>)
-    return optionValue
-  }*/
 
   render() {
     return (

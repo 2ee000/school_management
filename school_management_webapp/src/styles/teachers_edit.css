@@ -1,0 +1,117 @@
+.teacher__edit {
+  width: 1150px;
+  height: 700px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  gap: 100px;
+  background: #FCFAFA;
+}
+
+.edit__profile {
+  width: 400px;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  gap: 50px;
+}
+
+.edit__text {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  gap: 21px;
+  margin-bottom: 36px;
+}
+
+.edit__text input {
+  width: 250px;
+  padding: 15px;
+  border: 0.5px solid #A7A7A7;
+  border-radius: 4px;
+  font-family: 'Kumbh Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  text-align: start;
+  color: #4F4F4F;
+}
+
+.edit__about {
+  height: 300px;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: start;
+  text-align: start;
+  justify-content: end;
+  gap: 16px;
+}
+
+.edit__about p {
+  padding-left: 15px;
+  font-family: 'Kumbh Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+  color: #1A1A1A;
+}
+
+.edit__about textarea {
+  width: 300px;
+  height: 200px;
+  padding: 15px;
+  font-family: 'Kumbh Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 21px;
+  color: #A7A7A7;
+  resize: none;
+  border: 0.5px solid #A7A7A7;
+  border-radius: 4px;
+}
+
+.edit__etc {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-self: center;
+  gap: 50px;
+}
+
+.edit__class, .edit__gender {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 8px;
+}
+
+.edit__class p, .edit__gender p {
+  font-family: 'Kumbh Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 15px;
+  color: #1A1A1A;
+}
+
+.edit__class select, .edit__gender select {
+  width: 125px;
+  padding: 15px;
+  border: 0.5px solid #A7A7A7;
+  border-radius: 4px;
+  font-family: 'Kumbh Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  text-align: start;
+  color: #4F4F4F;
+  margin-bottom: 26px;
+}

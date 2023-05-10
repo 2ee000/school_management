@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import '../styles/students_adddata.css';
+import '../styles/students_addanother.css';
 import Student_Sidebar from '../components/Student_Sidebar';
 import Students_Topbar from '../components/Students_Topbar';
-import Search from '../components/Search';
 
 class Students_AddData extends Component {
   constructor(props) {
@@ -16,18 +16,56 @@ class Students_AddData extends Component {
       password: '',
       phoneNumber: '',
       emailAddress: '',
+      img: '',
       about: '',
+      showImg: 'https://cdn-icons-png.flaticon.com/512/3177/3177440.png',
       overlapCheck: false
     };
+    this.uploadImg = this.uploadImg.bind(this);
     this.changePage = this.changePage.bind(this);
     this.signupAxios = this.signupAxios.bind(this);
     this.studentCheck = this.studentCheck.bind(this);
     this.studentError = this.studentError.bind(this);
+    this.changePageButton = this.changePageButton.bind(this);
+    this.cancleButton = this.cancleButton.bind(this);
     this.addStudentButton = this.addStudentButton.bind(this);
   }
 
   componentDidMount() {
     this.changePage();
+  }
+
+  uploadImg() {
+    const uploadedImage = React.createRef(null);
+    const imageUploader = React.createRef(null);
+
+    const handleImageUpload = e => {
+      const [file] = e.target.files;
+      if (file) {
+        const reader = new FileReader();
+        const { current } = uploadedImage;
+        current.file = file;
+        reader.onload = e => {
+          current.src = e.target.result;
+          this.setState({img: file});
+          this.setState({showImg: current.src});
+        };
+        reader.readAsDataURL(file);
+      }
+    };
+    return (
+      <div className='information__profile'>
+        <input className="hidden-input"
+          type="file"
+          accept="image/*"
+          onChange={handleImageUpload}
+          ref={imageUploader}
+        />
+        <div onClick={() => imageUploader.current.click()}>
+          <img className='profile__img' ref={uploadedImage} src={this.state.showImg}/>
+        </div>
+      </div>
+    );
   }
 
   changePage() {
@@ -123,10 +161,10 @@ class Students_AddData extends Component {
       return (
         <div className='student__addanother'>
           <div className='information__profile'>
-            <div className='profile__img'></div>
+            {this.uploadImg()}
             <div className='profile__text'>
               <p>{this.state.fullName}</p>
-              <p>{this.state.identificationNumber}</p>
+              <p>{this.state.emailAddress}</p>
             </div>
           </div>
           <div className='information__about'>
@@ -150,28 +188,30 @@ class Students_AddData extends Component {
   }
 
   async signupAxios() {
-    await axios.post('http://15.164.100.35:12044/admin/1/student/', {
-      student_code : this.state.identificationNumber,
-      student_name : this.state.fullName,
-      student_email : this.state.emailAddress,
-      password : this.state.password,
-      class : this.state.class,
-      gender : this.state.gender,
-      phone_number : this.state.phoneNumber,
+    const school_code = localStorage.getItem('school_code');
+    const formData = new FormData();
+    formData.append('student_name', this.state.fullName);
+    formData.append('student_code', this.state.identificationNumber);
+    formData.append('student_email', this.state.emailAddress);
+    formData.append('password', this.state.password);
+    formData.append('class', this.state.class);
+    formData.append('gender', this.state.gender);
+    formData.append('phone_number', this.state.phoneNumber);
+    formData.append('image', this.state.img);
+    formData.append('student_about', this.state.about);
+    await axios.post(`http://15.164.100.35:12044/admin/${school_code}/student/`, formData, {
       headers: {
-        "Content-Type": "application/json",
+        "Content-Type": "multipart/form-data",
         Authorization: `Bearer ${localStorage.getItem('token')}`
       }
     })
     .then((response) => {
       console.log(response);
-      console.log('됐음');
       if(response.data.statusCode === 201) {
         window.location.replace('/studentsList')
       }
     }) .catch((error) => {
       console.log(error);
-      console.log('안됐음');
       if(error.response.data.statusCode === 400) {
         window.alert('Duplicate information exist!');
       }
@@ -222,7 +262,9 @@ class Students_AddData extends Component {
   }
 
   cancleButton() {
-    this.setState({about: null});
+    this.setState({img: null});
+    this.setState({about: ''});
+    this.setState({showImg: 'https://cdn-icons-png.flaticon.com/512/3177/3177440.png'});
     this.setState({overlapCheck: false});
   }
 
@@ -237,7 +279,6 @@ class Students_AddData extends Component {
         <Students_Topbar />
         <Student_Sidebar />
         <div className='student__wrapper'>
-          <Search />
           {this.changePage()}
         </div>
       </div>

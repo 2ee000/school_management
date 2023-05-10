@@ -13,13 +13,15 @@ class Dashboard_Sidebar extends Component {
 
   componentDidMount() {
     this.checkToken();
+    console.log(localStorage);
     if(localStorage.getItem('token') === undefined) {
       window.location.replace('/adminLogin');
     }
   }
 
   async checkToken() {
-    await axios.get('http://15.164.100.35:12044/admin/1/teacher/all' , {
+    const school_code = localStorage.getItem('school_code');
+    await axios.get(`http://15.164.100.35:12044/admin/${school_code}/teacher/all` , {
       headers: {
         "Content-Type": "application/json",
         Authorization: `Bearer ${localStorage.getItem('token')}`

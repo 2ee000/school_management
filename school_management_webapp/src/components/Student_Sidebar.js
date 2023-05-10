@@ -19,7 +19,8 @@ class Student_Sidebar extends Component {
   }
 
   async checkToken() {
-    await axios.get('http://15.164.100.35:12044/admin/1/student/all', {
+    const school_code = localStorage.getItem('school_code');
+    await axios.get(`http://15.164.100.35:12044/admin/${school_code}/student/all`, {
       headers: {
         "Content-Type": "application/json",
         Authorization: `Bearer ${localStorage.getItem('token')}`
@@ -29,7 +30,6 @@ class Student_Sidebar extends Component {
     }).catch((error) => {
       console.log(error);
     })
-    console.log(localStorage.getItem('token'));
   }
 
   goDashboard() {

@@ -10,7 +10,6 @@ class Teachers_AddData extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      img: '',
       fullName: '',
       identificationNumber: '',
       class: '',
@@ -19,6 +18,7 @@ class Teachers_AddData extends Component {
       phoneNumber: '',
       subject: '',
       emailAddress: '',
+      img: '',
       about: '',
       showImg: 'https://cdn-icons-png.flaticon.com/512/3177/3177440.png',
       overlapCheck: false
@@ -33,6 +33,10 @@ class Teachers_AddData extends Component {
     this.addTeacherButton = this.addTeacherButton.bind(this);
   }
 
+  componentDidMount() {
+    this.changePage();
+  }
+  
   uploadImg() {
     const uploadedImage = React.createRef(null);
     const imageUploader = React.createRef(null);
@@ -200,6 +204,7 @@ class Teachers_AddData extends Component {
   }
 
   async signupAxios() {
+    const school_code = localStorage.getItem('school_code');
     const formData = new FormData();
     formData.append('teacher_name', this.state.fullName);
     formData.append('teacher_code', this.state.identificationNumber);
@@ -211,7 +216,7 @@ class Teachers_AddData extends Component {
     formData.append('phone_number', this.state.phoneNumber);
     formData.append('image', this.state.img);
     formData.append('teacher_about', this.state.about);
-    await axios.post('http://15.164.100.35:12044/admin/1/teacher/', formData, {
+    await axios.post(`http://15.164.100.35:12044/admin/${school_code}/teacher/`, formData, {
       headers: {
         "Content-Type": "multipart/form-data",
         Authorization: `Bearer ${localStorage.getItem('token')}`
